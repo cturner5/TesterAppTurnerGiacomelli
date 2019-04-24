@@ -1,6 +1,7 @@
 import re
 import sys
 import pprint
+import os
 
 #login
 def login():
@@ -20,25 +21,37 @@ def login():
             line = line[:-1]
         accountsFileList.append(line)
 
+    print(accountsFileList)
+
     #placing info from list into dictionary
     counter = 0
+    place = 1
     for word in accountsFileList:
-        if counter % 2 == 1:
-            accounts[accountsFileList[counter - 1]] = word
+        if place % 3 == 0 and place != 0:
+            accounts[accountsFileList[counter - 2]] = accountsFileList[counter - 1], accountsFileList[counter]
         counter += 1
+        place += 1
+
+    pprint.pprint(accounts)
 
     loggingin = True
     while loggingin == True:
         #printing menu + asking for user input
         print("Log in or sign up:")
-        print("1. Log in ")
-        print("2. Sign up ")
-        select = int(input())
+        print("Press '1' to log in")
+        print("Press '2' to sign up")
+        print("Press any other key to exit")
+        try:
+            select = int(input())
+            if select != 1 and select != 2:
+                raise ValueError
+        except ValueError:
+            print("Exiting...")
+            break
 
         #if log in
         if select == 1:
-           done = False
-           while not done:
+           while True:
                 try:
                     #take username and password
                     print("Enter your username: ")
@@ -49,7 +62,7 @@ def login():
                     if usernameSubmit not in accounts.keys():
                         raise Exception("Wrong password or username. ")
                     elif usernameSubmit in accounts.keys():
-                        if accounts[usernameSubmit] != passwordSubmit:
+                        if accounts[usernameSubmit][1] != passwordSubmit:
                             raise Exception("Wrong password or username")
                     #if both username and password correct, print a welcome message and break out of loop
                     print("Welcome " + usernameSubmit + ".")
@@ -61,6 +74,12 @@ def login():
 
         #if sign up
         elif select == 2:
+            print("Would you like to associate an email? ")
+            yesNo = input().upper()
+            if yesNo == 'YES':
+                print("Enter an email: ")
+                email = input()
+
             #asks for a username, if username is already taken, reprompt
             print("Enter a username: ")
             while True:
@@ -87,11 +106,14 @@ def login():
                         print("Passwords do not match. ")
                         print("Enter a password: ")
             #new account is placed in accounts dictionary
-            accounts[username] = password
+            entry = [email, password]
+            accounts[username] = entry
             #username and password placed into list for later placement into accounts file
             insertionList.append("\n" + username)
+            insertionList.append("\n" + email)
             insertionList.append("\n" + password)
         #if user presses something other than 1 or 2, program terminates
+
         else:
             sys.exit()
 
@@ -99,6 +121,8 @@ def login():
     accountsFile.writelines(insertionList)
     #close accountsFile
     accountsFile.close()
+
+    return usernameSubmit
 #login
 
 #isStrong
@@ -129,4 +153,59 @@ def isStrong(password):
     return True
 #isStrong
 
-login()
+#printQuizMenu
+def printQuizMenu():
+    menuDict = {}
+    counter = 1
+    files = os.listdir("quizFiles")
+    fileNames = [x for x in files]
+    for i in fileNames:
+        menuDict[counter] = i
+        print(str(counter) + ": " + i)
+        counter += 1
+
+    return menuDict
+#printQuizMenu
+
+#selectQuiz
+def selectQuiz():
+    print("Press '1' to take a quiz, press any other key to exit: ")
+    if int(input()) != 1:
+        print("Goodbye.")
+        sys.exit()
+    print("Enter the number corresponding to the quiz you would like to take: ")
+    menuSelect = printQuizMenu()
+    while True:
+        try:
+            selection = int(input())
+            if selection not in menuSelect.keys():
+                raise ValueError
+            break
+        except ValueError:
+            print("Quiz not found, please select an existing quiz: ")
+
+    return [selection, menuSelect[selection]]
+    #print menu of available quizzes
+#selectQuiz
+
+#quizRange
+def quizRange(selection):
+    desiredQuestions = [] 
+    print("Press '1' to enter a number of questions to be randomly selected. Press '2' to enter a range of questions to be selected. ")
+    print("Enter '0' to skip this.")
+    if int(input()) == 1:
+        print("Enter a number of questions: ")
+    elif int(input()) == 2:
+        print("Enter the upper bound: ")
+        desiredQuestions.append(int(input()))
+        print("Enter the lower bound: ")
+    else:
+        pass
+
+    return desiredQuestions
+
+#quizRange
+
+#sessionOwner = login()
+selection = selectQuiz()
+
