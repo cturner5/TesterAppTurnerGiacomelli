@@ -2,6 +2,7 @@ import re
 import sys
 import pprint
 import os
+import quizParser
 
 #login
 def login():
@@ -160,9 +161,10 @@ def printQuizMenu():
     files = os.listdir("quizFiles")
     fileNames = [x for x in files]
     for i in fileNames:
-        menuDict[counter] = i
-        print(str(counter) + ": " + i)
-        counter += 1
+        if i[-4:] == ".txt":
+            menuDict[counter] = i
+            print(str(counter) + ": " + i)
+            counter += 1
 
     return menuDict
 #printQuizMenu
@@ -188,6 +190,7 @@ def selectQuiz():
     #print menu of available quizzes
 #selectQuiz
 
+'''
 #quizRange
 def quizRange(selection):
     desiredQuestions = [] 
@@ -205,7 +208,16 @@ def quizRange(selection):
     return desiredQuestions
 
 #quizRange
+'''
 
 #sessionOwner = login()
 selection = selectQuiz()
+
+quiz = quizParser.Quiz()
+
+quiz = quiz.parseQuiz(selection[1])
+
+for i in quiz:
+    print(i, end='')
+
 
