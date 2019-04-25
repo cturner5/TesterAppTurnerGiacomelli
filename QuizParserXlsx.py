@@ -1,0 +1,1 @@
+#object is to return a dictionary where in each key is a question and its value is its answer

@@ -2,7 +2,7 @@ import re
 import sys
 import pprint
 import os
-import quizParser
+import quizParserTxt
 
 #login
 def login():
@@ -213,9 +213,9 @@ def quizRange(selection):
 #sessionOwner = login()
 selection = selectQuiz()
 
-quiz = quizParser.Quiz()
+quiz = quizParserTxt.Quiz()
 
-quiz = quiz.parseQuiz(selection[1])
+quiz = quiz.parseQuestionsTxt(selection[1])
 
 for i in quiz:
     print(i, end='')

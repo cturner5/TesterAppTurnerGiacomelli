@@ -23,7 +23,7 @@
 	D. The cost of big IT project failure goes up.
 
 5. A terabyte is 2^___ bytes   (5)
-    	A. 10
+    A. 10
 	B. 40
 	C. 20
 	D. 30
