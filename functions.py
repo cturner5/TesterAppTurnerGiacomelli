@@ -3,6 +3,15 @@ import sys
 import pprint
 import os
 import quizParserTxt
+import QuizParserXlsx
+
+'''
+current constraints: 
+quizFile and answerFile must start with 1
+hence, they must be in sync with one another, or else it doesn't fucking work :)))))))))))))
+this is reasonable, as a quiz must have an answer for every question in it. else there is no point in 
+giving someone a quiz if it can't be graded, is there? 
+'''
 
 #login
 def login():
@@ -80,6 +89,8 @@ def login():
             if yesNo == 'YES':
                 print("Enter an email: ")
                 email = input()
+            elif yesNo == 'NO':
+                email = ""
 
             #asks for a username, if username is already taken, reprompt
             print("Enter a username: ")
@@ -172,7 +183,7 @@ def printQuizMenu():
 #selectQuiz
 def selectQuiz():
     print("Press '1' to take a quiz, press any other key to exit: ")
-    if int(input()) != 1:
+    if input() != '1':
         print("Goodbye.")
         sys.exit()
     print("Enter the number corresponding to the quiz you would like to take: ")
@@ -191,33 +202,28 @@ def selectQuiz():
 #selectQuiz
 
 '''
-#quizRange
-def quizRange(selection):
-    desiredQuestions = [] 
-    print("Press '1' to enter a number of questions to be randomly selected. Press '2' to enter a range of questions to be selected. ")
-    print("Enter '0' to skip this.")
-    if int(input()) == 1:
-        print("Enter a number of questions: ")
-    elif int(input()) == 2:
-        print("Enter the upper bound: ")
-        desiredQuestions.append(int(input()))
-        print("Enter the lower bound: ")
+#administerQuiz
+def administerQuiz(questionsOrQuestionRange):
+    if questionsOrQuestionRange[1] == 0:
+        #if the second element of the tuple is 0, then the quizzer is to randomly
     else:
-        pass
-
-    return desiredQuestions
-
-#quizRange
+#administerQuiz
 '''
 
 #sessionOwner = login()
 selection = selectQuiz()
 
-quiz = quizParserTxt.Quiz()
+quizObj = quizParserTxt.Quiz()
 
-quiz = quiz.parseQuestionsTxt(selection[1])
+#selection[1] is the file name
+questions = quizObj.parseQuestionsTxt(selection[1])
+answers = quizObj.parseAnswersTxt(selection[1])
+numberOfQuestions = quizObj.questions_or_questionRange()
+quiz = quizObj.parseQuizTxt()
+pprint.pprint(quiz)
 
-for i in quiz:
-    print(i, end='')
+#for i in quiz: print(i, end='')
+
+#for i in answers: print(i, end='')
 
 
