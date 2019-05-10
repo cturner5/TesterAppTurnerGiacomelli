@@ -9,7 +9,6 @@ class Quiz:
         self.quiz = {} #dictionary made by combining questions and answers
 
     def parseQuestionsXlsx(self, fileName):
-        questions = []
         location = "quizFiles\\" + fileName
         quizFile = openpyxl.load_workbook(location)
         sheet_names = quizFile.sheetnames
@@ -22,10 +21,13 @@ class Quiz:
             elif cellObj.value != None and sheet['C'][cellObj.row - 1].value != None:
                 tempString = tempString + str(cellObj.value) + " " + str(sheet['C'][cellObj.row - 1].value) + "\n"
             elif cellObj.value == None:
-                questions.append(tempString)
+                self.questions.append(tempString)
+                tempString = ""
 
-        for x in range(len(questions)):
-            print(questions[x])
+        self.questions.append(tempString)
+
+        for x in range(len(self.questions)):
+            print(selfquestions[x])
 
 
-Quiz.parseQuestionsXlsx("",'textxlsx.xlsx')
+#Quiz.parseQuestionsXlsx("",'textxlsx.xlsx') #for testing
