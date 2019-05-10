@@ -27,7 +27,24 @@ class Quiz:
         self.questions.append(tempString)
 
         for x in range(len(self.questions)):
-            print(selfquestions[x])
+            print(self.questions[x])
+
+    def parseAnswersXlsx(self, fileName):
+
+        for i in range(5):
+            fileName = fileName[:-1]
+
+        location = "quizFiles\\quizAnswers\\" + fileName + "Answers.xlsx"
+
+        answerFile = openpyxl.load_workbook(location)
+        sheet_names = answerFile.sheetnames
+        sheet = answerFile[sheet_names[0]]
+
+        for cellObj in sheet['A']:
+            self.answers.append(str(cellObj.value))
+
+        for x in range(len(self.answers)):
+            print(self.answers[x])
 
 
 #Quiz.parseQuestionsXlsx("",'textxlsx.xlsx') #for testing
