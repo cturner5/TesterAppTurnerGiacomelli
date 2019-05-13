@@ -206,13 +206,14 @@ def selectQuiz():
 def saveScore(username, score):
     filename = str(username + "Stats.txt")
     scoreFile = open(filename, 'a')
-    scoreFile.append(score)
+    scoreFile.write(score)
     scoreFile.close()
 #saveScore
 
 #emailScore
 def emailScore(score, email):
     smtpObj = smtplib.SMTP('smtp.gmail.com', 587)
+    smtpObj.connect("smtp.gmail.com", 465)
 
     if email != None:
         message = "Subject: Your quiz score is" + str(score)
@@ -221,19 +222,53 @@ def emailScore(score, email):
         smtpObj.quit()
 #emailScore
 
-'''
-#administerQuiz
+# administerQuiz
 def administerQuiz(questionsOrQuestionRange, quiz):
     if questionsOrQuestionRange[1] == 0:
-        #if the second element of the tuple is 0, then the quizzer gives each question sequentially 
-        for question in quiz: 
-            #print the question
-            print(question.key())
-            
+        # if the second element of the tuple is 0, then the quizzer gives each question sequentially
+        right = 0
+        wrong = 0
+        for question in quiz:
+            print('\n')
+            print(question)
+            print("Enter your answer: ")
+            answer = input()
+            temp = quiz.get(question)
+            temp = [x for x in temp.values()]
+            for j in temp:
+                answers = j
+            # print(what)
+            if answer.upper() in answers:
+                right += 1
+            elif answer.upper() not in answers:
+                wrong += 1
+            numQuestions = right + wrong
+            score = right / numQuestions
     else:
-        #if second element is not 0, gives questions in range specified by tuple 
-#administerQuiz
-'''
+    # if second element is not 0, gives questions in range specified by tuple
+        right = 0
+        wrong = 0
+        for i in range(questionsOrQuestionRange[0] - 1, questionsOrQuestionRange[1]):
+            print('\n')
+            quizList = quiz.keys()
+            quizList = [x for x in quizList]
+            print(quizList[i])
+            print("Enter your answer: ")
+            answer = input()
+            temp = quiz.get(quizList[i])
+            temp = [v for v in temp.values()]
+            for j in temp:
+                answers = j
+            if answer.upper() in answers:
+                right += 1
+            elif answer.upper() not in answers:
+                wrong += 1
+            numQuestions = right + wrong
+            score = right / numQuestions
+    score = str(score * 100)
+    print("You got " + score + "% on this quiz.")
+    return score
+# administerQuiz
 
 sessionOwner = login()
 selection = selectQuiz()
@@ -253,7 +288,17 @@ quiz = quizObj.parseQuizTxt()
 quiz = quizObj.parseQuizTxt()
 pprint.pprint(quiz)
 
-#score = administerQuiz(options, quiz)
+score = administerQuiz(options, quiz)
+
+print("Would you like to save this score?")
+ifSave = input()
+if ifSave.upper() == 'YES':
+    saveScore(username, score)
+
+print("Would you like an email of your quiz statistics?")
+ifEmail = input()
+if ifEmail.upper() == 'YES':
+    emailScore(score, email)
 
 #for i in quiz: print(i, end='')
 
