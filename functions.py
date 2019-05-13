@@ -4,6 +4,7 @@ import pprint
 import os
 import quizParserTxt
 import QuizParserXlsx
+import smtplib
 
 '''
 current constraints: 
@@ -44,8 +45,7 @@ def login():
 
     pprint.pprint(accounts)
 
-    loggingin = True
-    while loggingin == True:
+    while True:
         #printing menu + asking for user input
         print("Log in or sign up:")
         print("Press '1' to log in")
@@ -61,7 +61,7 @@ def login():
 
         #if log in
         if select == 1:
-           while True:
+            while True:
                 try:
                     #take username and password
                     print("Enter your username: ")
@@ -76,11 +76,12 @@ def login():
                             raise Exception("Wrong password or username")
                     #if both username and password correct, print a welcome message and break out of loop
                     print("Welcome " + usernameSubmit + ".")
-                    loggingin = False
+                    email = accounts[usernameSubmit][0]
                     break
                 #if username and/or password is wrong, output message and loop back
                 except Exception as wrong:
                     print(wrong)
+            break
 
         #if sign up
         elif select == 2:
@@ -134,7 +135,7 @@ def login():
     #close accountsFile
     accountsFile.close()
 
-    return usernameSubmit
+    return (usernameSubmit, email)
 #login
 
 #isStrong
@@ -201,26 +202,58 @@ def selectQuiz():
     #print menu of available quizzes
 #selectQuiz
 
+#saveScore
+def saveScore(username, score):
+    filename = str(username + "Stats.txt")
+    scoreFile = open(filename, 'a')
+    scoreFile.append(score)
+    scoreFile.close()
+#saveScore
+
+#emailScore
+def emailScore(score, email):
+    smtpObj = smtplib.SMTP('smtp.gmail.com', 587)
+
+    if email != None:
+        message = "Subject: Your quiz score is" + str(score)
+        smtpObj.login('testerappcs3030@gmail.com', 'generic1234')
+        smtpObj.sendmail(email, 'testerappcs3030@gmail.com', message)
+        smtpObj.quit()
+#emailScore
+
 '''
 #administerQuiz
-def administerQuiz(questionsOrQuestionRange):
+def administerQuiz(questionsOrQuestionRange, quiz):
     if questionsOrQuestionRange[1] == 0:
-        #if the second element of the tuple is 0, then the quizzer is to randomly
+        #if the second element of the tuple is 0, then the quizzer gives each question sequentially 
+        for question in quiz: 
+            #print the question
+            print(question.key())
+            
     else:
+        #if second element is not 0, gives questions in range specified by tuple 
 #administerQuiz
 '''
 
-#sessionOwner = login()
+sessionOwner = login()
 selection = selectQuiz()
+username = sessionOwner[0]
+email = sessionOwner[1]
 
-quizObj = quizParserTxt.Quiz()
+if selection[1].endswith('.txt'):
+    quizObj = quizParserTxt.Quiz()
+elif selection[1].endswith('.xlsx'):
+    quizObj = QuizParserXlsx.Quiz()
 
 #selection[1] is the file name
 questions = quizObj.parseQuestionsTxt(selection[1])
 answers = quizObj.parseAnswersTxt(selection[1])
-numberOfQuestions = quizObj.questions_or_questionRange()
+options = quizObj.questions_or_questionRange()
+quiz = quizObj.parseQuizTxt()
 quiz = quizObj.parseQuizTxt()
 pprint.pprint(quiz)
+
+#score = administerQuiz(options, quiz)
 
 #for i in quiz: print(i, end='')
 
