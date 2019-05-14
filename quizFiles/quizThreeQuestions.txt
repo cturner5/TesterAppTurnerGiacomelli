@@ -1,5 +1,3 @@
-B. T
-
 221. Computers write numbers to memory differently than characters   (178)
 	A. T
 	B. F
