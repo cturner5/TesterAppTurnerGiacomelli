@@ -5,6 +5,8 @@ import os
 import quizParserTxt
 import QuizParserXlsx
 import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 '''
 current constraints: 
@@ -19,7 +21,7 @@ def login():
     #to contain user info
     accounts = {}
     #file from which user info is taken
-    accountsFile = open("accounts", 'r+')
+    accountsFile = open("accounts.txt", 'r+')
     #list into which user info from the file is placed
     accountsFileList = []
     #list to be used to place new user info into accounts
@@ -204,22 +206,30 @@ def selectQuiz():
 
 #saveScore
 def saveScore(username, score):
-    filename = str(username + "Stats.txt")
+    filename = str("userStats\\" + username + "Stats.txt")
     scoreFile = open(filename, 'a')
-    scoreFile.write(score)
+    scoreFile.write(score + '\n')
     scoreFile.close()
 #saveScore
 
 #emailScore
 def emailScore(score, email):
-    smtpObj = smtplib.SMTP('smtp.gmail.com', 587)
-    smtpObj.connect("smtp.gmail.com", 465)
 
     if email != None:
-        message = "Subject: Your quiz score is" + str(score)
-        smtpObj.login('testerappcs3030@gmail.com', 'generic1234')
-        smtpObj.sendmail(email, 'testerappcs3030@gmail.com', message)
-        smtpObj.quit()
+        message = "Subject: Your quiz score is " + str(score)
+        me = r"testerappcs3030@gmail.com"
+        my_password = r"generic1234"
+        you = email
+
+        # Send the message via gmail's regular server, over SSL - passwords are being sent, afterall
+        s = smtplib.SMTP_SSL('smtp.gmail.com')
+        # uncomment if interested in the actual smtp conversation
+        # s.set_debuglevel(1)
+        # do the smtp auth; sends ehlo if it hasn't been sent already
+        s.login(me, my_password)
+
+        s.sendmail(me, you, message)
+        s.quit()
 #emailScore
 
 # administerQuiz
@@ -271,34 +281,36 @@ def administerQuiz(questionsOrQuestionRange, quiz):
 # administerQuiz
 
 sessionOwner = login()
-selection = selectQuiz()
-username = sessionOwner[0]
-email = sessionOwner[1]
 
-if selection[1].endswith('.txt'):
-    quizObj = quizParserTxt.Quiz()
-elif selection[1].endswith('.xlsx'):
-    quizObj = QuizParserXlsx.Quiz()
+while True:
+    selection = selectQuiz()
+    username = sessionOwner[0]
+    email = sessionOwner[1]
 
-#selection[1] is the file name
-questions = quizObj.parseQuestionsTxt(selection[1])
-answers = quizObj.parseAnswersTxt(selection[1])
-options = quizObj.questions_or_questionRange()
-quiz = quizObj.parseQuizTxt()
-quiz = quizObj.parseQuizTxt()
-pprint.pprint(quiz)
+    if selection[1].endswith('.txt'):
+        quizObj = quizParserTxt.Quiz()
+    elif selection[1].endswith('.xlsx'):
+        quizObj = QuizParserXlsx.Quiz()
 
-score = administerQuiz(options, quiz)
+    #selection[1] is the file name
+    questions = quizObj.parseQuestionsTxt(selection[1])
+    answers = quizObj.parseAnswersTxt(selection[1])
+    options = quizObj.questions_or_questionRange()
+    quiz = quizObj.parseQuizTxt()
+    quiz = quizObj.parseQuizTxt()
+    pprint.pprint(quiz)
 
-print("Would you like to save this score?")
-ifSave = input()
-if ifSave.upper() == 'YES':
-    saveScore(username, score)
+    score = administerQuiz(options, quiz)
 
-print("Would you like an email of your quiz statistics?")
-ifEmail = input()
-if ifEmail.upper() == 'YES':
-    emailScore(score, email)
+    print("Would you like to save this score?")
+    ifSave = input()
+    if ifSave.upper() == 'YES':
+        saveScore(username, score)
+
+    print("Would you like an email of your quiz statistics?")
+    ifEmail = input()
+    if ifEmail.upper() == 'YES':
+        emailScore(score, email)
 
 #for i in quiz: print(i, end='')
 

@@ -4,10 +4,10 @@ import pprint
 
 class Quiz:
     def __init__(self):
-        self.fileName = "" #name of file to be used
-        self.questions = [] #list of questions
-        self.answers = [] #list of answers, answers list corresponds with the questions in the questions list
-        self.quiz = {} #dictionary made by combining questions and answers
+        self.fileName = ""  # name of file to be used
+        self.questions = []  # list of questions
+        self.answers = []  # list of answers, answers list corresponds with the questions in the questions list
+        self.quiz = {}  # dictionary made by combining questions and answers
 
     def parseQuestionsXlsx(self, fileName):
         location = "quizFiles\\" + fileName
@@ -116,13 +116,12 @@ class Quiz:
     # questions_or_questionRange
 
     def parseQuizTxt(self):
-        #creates final data structure of form {question:{number:answer}}
-        #needs only self.numbers_answers and self.questions
+        # creates final data structure of form {question:{number:answer}}
+        # needs only self.numbers_answers and self.questions
 
         for i in range(len(self.questions)):
             self.quiz[self.questions[i]] = self.numbers_answers[i]
 
         return self.quiz
 
-
-#Quiz.parseQuestionsXlsx("",'textxlsx.xlsx') #for testing
+# Quiz.parseQuestionsXlsx("",'textxlsx.xlsx') #for testing

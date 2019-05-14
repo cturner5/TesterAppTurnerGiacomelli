@@ -1,5 +1,5 @@
 1. The information technology industry accounts for about ____ percent of the United States' gross national product   (3)
-	A. 60
+    A. 60
 	B. 10
 	C. 30
 	D. 50
@@ -24,6 +24,6 @@
 
 5. A terabyte is 2^___ bytes   (5)
     A. 10
-	B. 40
+    B. 40
 	C. 20
 	D. 30
