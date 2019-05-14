@@ -1,0 +1,642 @@
+142. Which instruction is commonly used for a subroutine call?   (96)
+	A. jr $ra
+	B. call
+	C. bne
+	D. beq
+	E. jump and link
+	F. j
+	G. jal
+
+143. The jal instruction is unique because it also   (97)
+	A. Resets the $pc register
+	B. Does not update the program counter
+	C. Writes to the $ra register
+	D. Always executes (i.e., it is not conditional)
+	E. Operates on four registers
+	F. Copies $pc to $ra
+	G. Checks the $ra before it branches
+
+144. To adjust the stack pointer to make room for three 32-bit values, the correct instruction is   (99)
+	A. addi $sp, $sp, 0xc
+	B. addi $sp, $sp, 12
+	C. addi $sp, $sp, -3
+	D. addi $sp, $sp, 0xfff4
+	E. addi $sp, $sp, -12
+	F. addi $sp, $sp, 0x0012
+	G. addi $sp, $sp, 3
+
+145. If subroutine A calls subroutine B   (100)
+	A. Subroutine B must preserve $ra.
+	B. Subroutine A is a leaf routine.
+	C. Subroutine A must preserve $ra.
+	D. Neither subroutine needs to preserve $ra; it is automatically saved.
+	E. No stack space is needed.
+	F. There is no convention as long as the code works.
+	G. Subroutine A is a non-leaf subroutine.
+
+146. Which statement is true?   (100)
+	A. The stack pointer may not be moved during the call.
+	B. Allocating space on the stack means incrementing the stack pointer.
+	C. The stack pointer must be in the same position before and after the call.
+	D. Only full words may be stored on the stack.
+
+147. In a recursive procedure   (101)
+	A. JAL is never used.
+	B. $t register values must be preserved
+	C. $ra does not have to be preserved.
+	D. Local storage must be allocated on the stack.
+
+148. What MIPS registers bound the local variable storage area for a subroutine?   (103)
+	A. $ra and $sp
+	B. The frame pointer and the global pointer.
+	C. The stack pointer and the frame pointer.
+	D. The stack pointer and the return address.
+	E. $gp and $fp
+	F. $sp and $gp
+	G. $fp and $sp
+
+149. Which register is used in allocation of memory on the heap?   (104)
+	A. $fp
+	B. $gp
+	C. $sp
+	D. The global pointer
+	E. $ra
+	F. The heap pointer.
+	G. The OS pointer.
+
+150. A disadvantage of recursion is that it can consume a lot of   (104)
+	A. Memory on the stack.
+	B. Execution cycles
+	C. Stack space
+	D. Heap memory
+	E. Registers
+	F. Cache memory.
+	G. Main memory.
+
+151. When a program is loaded into memory, the text segment   (104)
+	A. Contains the MIPS machine code
+	B. Is where literal constants are stored.
+	C. Holds the program's source code
+	D. Contains the word processor data for the text editor.
+
+152. Which MIPS registers should not be used by the programmer?   (105)
+	A. $sp
+	B. $v0, $v1
+	C. $ra
+	D. $at
+
+153. The MIPS instruction(s) used to load a 32-bit register with data which is hard-coded into the program is/are   (105)
+	A. lui, ori
+	B. ld, la
+	C. mfhi, mflo
+	D. addui
+	E. ld32
+	F. mov
+	G. ori, lui
+
+154. Storage and use of decimal numbers for computation in computers is   (107)
+	A. More difficult to implement and consumes more memory than needed.
+	B. A good idea years ago, but no longer necessary because of cheap memory.
+	C. Sometimes useful in financial applications.
+	D. Becoming more likely with the advent of multicore processors
+	E. Unpopular because the standards are complicated.
+	F. Never used anymore.
+	G. Inefficient because numbers are more accurately represented in binary
+
+155. The difference between ASCII and Unicode is   (109)
+	A. ASCII is used in Java and unicode is used by Microsoft
+	B. Apple only uses ASCII
+	C. ASCII represents up to 256 characters, and Unicode represents up to 65536 characters.
+	D. Unicode represents up to 256 characters, and ASCII represents up to 65536 characters.
+	E. Unicode can represent more characters than ASCII.
+	F. ASCII is popular in foreign languages and Unicode is not
+	G. Unicode is used by Java and ASCII is used by Microsoft.
+
+156. To move a unicode character from memory to a register, which MIPS instruction should be used?   (110)
+	A. lwu
+	B. lbu
+	C. lh
+	D. lb
+	E. lhu
+	F. lw
+
+157. Some character sets use 16-bit characters.  The would be loaded by which MIPS command?   (110)
+	A. LB
+	B. LHU
+	C. LW
+	D. LBU
+
+158. Unicode consists of 2-byte characters.  Which MIPS instruction should be used to load a unicode character   (110)
+	A. LW
+	B. LHU
+	C. LB
+	D. LBU
+
+159. Loading a 32-bit value from immediate data into a MIPS register can be done with which instructions   (112)
+	A. lui, addi
+	B. addi, slr
+	C. mfhi, mflo
+	D. lui, ori
+	E. l32
+	F. lui, slt
+	G. lui, ori
+
+160. A branch instruction is a(n) ____ instruction   (113)
+	A. P-Type
+	B. J-type
+	C. B-Type
+	D. K-Type
+	E. I-type
+	F. R-type
+
+161. Which is not a type of MIPS instruction?   (113)
+	A. B-Type
+	B. I-type
+	C. R-type
+	D. S-type
+	E. J-type
+
+162. The J-type instruction has an immediate field which is ____ bits long   (113)
+	A. 6
+	B. 16
+	C. 5
+	D. 15 plus a sign
+	E. 26
+	F. 25 plus a sign
+	G. 26 unsigned
+
+163. The J instruction immediate field is _____ bits.   (113)
+	A. 28
+	B. 16
+	C. 15
+	D. 26
+
+164. How is immediate data handled in branch instructions   (114)
+	A. It is added to the program counter
+	B. It is sign-extended and subtracted from the program counter
+	C. It is sign extended and added to the program counter
+	D. It is used to decide whether or not to branch
+	E. It is shifted left 2 after being sign extended and added to the program counter
+	F. It replaces the program counter
+	G. It is sign extended, shifted left 2 and added to the program counter
+
+165. An addressing scheme where the target address is the sum of the program counter and a number specified in an instruction is   (114)
+	A. Register addressing
+	B. Absolute addressing
+	C. Memory Indirect addressing.
+	D. Memory-relative addressing
+	E. PC-relative addressing
+	F. Immediate addressing.
+	G. Program Counter relative addressing
+
+166. The 16-bit immediate field of a conditional branch instruction can jump through what address range?   (115)
+	A. +-128K bytes
+	B. 0-64K instructions.
+	C. 0 to 256K bytes
+	D. +- 32K bytes
+	E. +- 128K instructions
+	F. +-32K instructions
+	G. 0 to 64K bytes
+
+167. The branch offset in a MIPS BEQ or BNE instruction   (115)
+	A. is a 32-bit value.
+	B. is the number of bytes forward or back that the branch can take.
+	C. is 26 bits long.
+	D. is the number of instructions forward or back that the branch takes.
+
+168. The branch instructions can jump plus or minus 32k instructions.  What if we need to branch farther than that?   (116)
+	A. A jr instruction can be used if the target is fixed.
+	B. Branch logic can be combine with the jump instruction to do a longer branch.
+	C. Put the target address into $ra and execute jr $ra.
+	D. Write directly to the $pc register.
+	E. Multiple branch instructions can be used to jump farther.
+	F. The immediate field can be extended.
+	G. It cannot be done if there is a condition attached to the jump.
+
+169. The MIPS J instruction uses ______ addressing   (116)
+	A. Replace bottom 28 bits of PC 
+	B. Shift right two bits
+	C. PC-relative
+	D. Register
+	E. Immediate
+	F. Pseudodirect
+	G. Add bottom 26 bits to PC
+
+170. The MIPS instruction set does not include a "branch on less than".  Why not?   (120)
+	A. There was not enough room on the chip to implement the circuits needed for the logic.
+	B. It would take too long as a single instruction and stretch the clock cycle for all other instructions
+	C. The need for the branch on less than instruction wasn't discovered until after foundational decisions had been made.
+	D. BLT is a pseudo instruction.
+	E. It can be done by a combination of simple instructions.
+	F. The Assembler can do that.
+	G. It was originally designed into the circuitry, but a wiring error forced it to be disabled.
+
+171. What best describes what a linker does?   (124)
+	A. Resolves references among separate code modules.
+	B. Calculates load parameters for the program.
+	C. Checks the assembly code against the manufacturer's specification.
+	D. Ensures instructions are on 4-byte boundaries.
+	E. Compresses executable code size.
+	F. Combines separately compiled code and data modules into a single executable file.
+	G. Notifies the programmer of errors in the source code.
+
+172. In the traditional scheme of compiling and running a program, what is the sequence of actions?   (124)
+	A. Link, assemble, load.
+	B. Compile, assemble, load, link.
+	C. Load, go.
+	D. Link, assemble.
+	E. Compile, assemble, link.
+	F. Load, Link, Compile.
+	G. Compile, assemble, link, load.
+
+173. An assembly instruction which is not executed in hardware but rather decomposed into a more verbose assembly-language construct by the assembler is called a   (125)
+	A. Pseudoinstruction
+	B. Macro
+	C. Simulated instruction
+	D. Hardware instruction
+	E. Pseudocode
+	F. pseudo instruction
+	G. Artificial instruction
+
+174. Which describes a symbol table?   (125)
+	A. A table containing the operations codes of all the assembly language instructions.
+	B. A list of all globally declared data in the program.
+	C. The list of ASCII characters used in the program code.
+	D. A table that matches names of labels to the addresses of the memory words that instructions occupy.
+	E. A table of all the special characters in the ASCII character set used in the source code.
+	F. A list of needed and supplied program locations.
+	G. A table that contains no information.
+
+175. What is the output of a linker?   (126)
+	A. Java bytecode.
+	B. A list of all the variables used in a program and their relative addresses
+	C. The binary executable.
+	D. An executable file.
+	E. Assembly language instructions
+	F. Modules of code to be strung together and executed
+	G. Microsoft Intermediate Language.
+
+176. Which is not an advantage to using compiled libraries of commonly used code (e.g., a math library)?    (126)
+	A. It makes the executable run faster.
+	B. It makes it easier to update the program when libraries have been updated.
+	C. It keeps the user from having to write complicated routines (e.g., matrix inversion)
+	D. The library code does not have to be compiled each time it's referenced in a program.
+
+177. Dynamically Linked Libraries (DLLs)   (129)
+	A. Are rarely used today because main memory is cheap.
+	B. Are not linked until runtime.
+	C. Are assembled by the loader and loaded as a complete unit when the program runs
+	D. Tend to make programs take more space in memory
+	E. Were invented by IBM in the 1960s.
+	F. Contain bare-bones machine instruction information in executable form
+	G. Use "Lazy Linking"
+
+178. What is the output of a Java compiler   (131)
+	A. Java bytecode
+	B. Dynamically linked libraries
+	C. Assembly instructions
+	D. A .class file.
+	E. A .jar file.0
+	F. machine instructions
+	G. A .exe file.
+
+179. What is the input to the Java Virtual Machine   (131)
+	A. Java source code
+	B. Java bytecode
+	C. MSIL
+	D. Dynamically linked libraries
+	E. .class files.0
+	F. Assembly instructions
+	G. Virtual code.
+
+180. In a Just-in-Time compiler, a code analyzer identifies the "hot" methods.  What is a "hot" method?   (132)
+	A. Methods which are called frequently.
+	B. Methods whose results will vary from run to run.
+	C. Methods that potentially take a long time to run.
+	D. Very short methods.
+
+181. What does the following code do?
+lw $t0, 0($s0)
+lw $t1, 4($s0)
+sw $t0, 4($s0)
+sw $t1, 0($s0)   (134)
+	A. Sorts a list of numbers
+	B. Swaps values.
+	C. Exchanges two values
+	D. Ensures proper order.
+	E. Clears memory
+	F. Performs an atomic exchange.
+	G. Nothing
+
+182. What kind of sort involves successive exchanges of values in an array until they are in order?   (135)
+	A. Quick sort
+	B. Speed sort.
+	C. Bucket sort
+	D. Short sort
+	E. Card sort
+	F. Bubble sort
+
+183. Which of the following is a pseudoinstruction?   (137)
+	A. addi
+	B. j
+	C. add
+	D. move
+	E. add
+	F. lgb
+	G. blt
+
+184. If one subroutine calls another, we must at least preserve   (138)
+	A. The $sp register
+	B. The frame pointer.
+	C. The return address register
+	D. The $s registers
+	E. The $ra register
+	F. The $a registers
+	G. The $t registers.
+
+185. What is the fastest way of saving a variable in the $a0 register   (138)
+	A. Use the $at register.
+	B. Add it to $0 and store it in another register.
+	C. Copy it to another register
+	D. Write it to disk
+	E. Save it in memory
+	F. Push it onto the stack
+	G. Place it into cache.
+
+186. Inlining saves   (138)
+	A. Programmers from themselves
+	B. Space on the heap.
+	C. variables onto the stack.
+	D. calling parameters in $a registers.
+	E. Code size at the expense of execution time.
+	F. The overhead of a procedure call
+	G. Execution time at the expense of code size.
+
+187. Machine Code optimized for speed has the fewest instructions   (140)
+	A. T
+	B. F
+
+188. Two methods of indexing lists of numbers are   (141)
+	A. Increments and decrements.
+	B. in-order and out-of-order
+	C. Tables and arrays
+	D. Arrays and pointers
+	E. serial and parallel
+	F. Offsets and shifts.
+	G. Pointers and arrays.
+
+189. Which is the fastest way to convert an array index to a memory address location   (144)
+	A. shift left 2 in hardware
+	B. Shift right in hardware.
+	C. successive adds of four
+	D. shift left 2 in software
+	E. Reroute address lines, each to the second one to its left.
+	F. multiply by four
+	G. Divide by four.
+
+190. While the C language is compiled and linked, the Java language is __________   (145)
+	A. Linked
+	B. Parsed
+	C. Executed
+	D. Compiled and Interpreted
+	E. Run
+	F. Run with the JVM.
+	G. Loaded
+
+191. The most popular instruction set for embedded devices is the _____ ISA   (146)
+	A. MIPS
+	B. Motorola
+	C. Acorn RISC Machine
+	D. Verilog
+	E. ARM
+	F. IBM JCL
+	G. Intel 32-bit
+
+192. Which is not a difference between the MIPS and ARM processor   (146)
+	A. The year of first product announcement
+	B. Use of RISC instructions.
+	C. Number of register designator bits in instructions.
+	D. Use of condition codes for branching.
+	E. The use of the zero register
+	F. The number of data addressing modes
+	G. The number of registers
+
+193. Which operation is unsupported in the ARM-7 instruction set?   (146)
+	A. Shift right and left.
+	B. load halfword signed
+	C. atomic swap
+	D. Divide
+	E. div
+	F. compare
+	G. Branch
+
+194. The MIPS instruction set has many more data addressing modes than the ARM set.   (147)
+	A. F
+	B. T
+
+195. The MIPS and ARM instruction sets differ widely on how they perform   (147)
+	A. Addition.
+	B. Register addressing.
+	C. Memory addressing.
+	D. Multiplication.
+	E. Compares and conditional branches
+	F. Signed addition.
+	G. Register-to-register transfers.
+
+196. How many extra instructions does the ARM instruction set require to conditionally skip a single instruction?   (147)
+	A. One
+	B. None
+	C. Zero
+	D. It cannot skip instructions.
+	E. Three
+	F. Four.
+	G. Two
+
+197. The ARM processor uses a status word of four bits: negative, zero, carry and overflow.  What is this status word used for?   (147)
+	A. Terminating the program if it crashes.
+	B. Performing the divide function.
+	C. Deciding whether or not to execute the instruction.
+	D. Returning values from subroutines.
+	E. Arguments for conditional branch instructions.
+	F. Conditionally executing instructions.
+	G. Passing arguments to subroutines.
+
+198. Each ARM instruction begins with _____   (147)
+	A. A four-bit code which determines whether the instruction will execute.
+	B. A six-bit operation code which can be zero.
+	C. The designation for the destination register.
+	D. An indication of how long it is.
+	E. A valid bit.
+	F. Condition codes
+	G. Bits that tell the length of the instruction.
+
+199. In the ARM 12-bit immediate field, the eight least significant bits are zero-extended to a 32-bit value, then rotated right the number of bits specified in the first four bits of the field multiplied by two. This allows   (148)
+	A. Positive and negative numbers.
+	B. The most frequently used 32-bit values to be represented.
+	C. All powers of 2 in a 32-bit value to be represented.
+	D. All 32-bit values to be represented.
+	E. Faster addition..
+	F. All 24-bit values to be represented.
+	G. All even numbers in a 32-bt word to be represented.
+
+200. ARMS processors can load blocks of memory into multiple registers with one instruction   (148)
+	A. T
+	B. F
+
+201. In general, a more complex instruction set means   (148)
+	A. Faster execution time
+	B. Lower cycles per instruction
+	C. Shorter clock cycles
+	D. More compact code
+	E. Faster compilers.
+	F. Lower instruction count
+	G. Easier pipelining.
+
+202. Intel's instruction set is characterized by   (149)
+	A. Backward compatibility.
+	B. Regularity.
+	C. Simplicity.
+	D. Reverse engineering.
+
+203. Intel's 1978 microprocessor, the 8086 had a 16-bit architecture with   (150)
+	A. Sixteen 16-bit registers
+	B. A single 16-bit register
+	C. An accumulator.
+	D. A combination of legacy 8-bit and new 16-bit registers.
+	E. A hardware stack.
+	F. sixteen-bit registers, some of which were special-purpose
+	G. Fewer registers than are common now.
+
+204. When floating point operations were introduced in the Intel processor line,   (150)
+	A. The new instructions were microcoded and executed on the original 8086 chip.
+	B. The instruction length was increased to 32-bits.
+	C. Integer processing slowed down as a result
+	D. They were not performed in the CPU itself.
+	E. They did not affect the instruction set.
+	F. IBM's chips were no longer needed.
+	G. They were performed in a separate off-chip processor.
+
+205. Intel's first 32-bit processor, the 80386 appeared the same year as the MIPS and ARM processors.  However   (150)
+	A. Intel continued to build on their former instruction set.
+	B. THe chip consumed less power than its competitors.
+	C. New instructions were not needed.
+	D. It was unable to execute programs written for the previous generation of processors.
+	E. The high four register bits were hard-wired to zero because Intel tried to beat ARM and MIPS to market.
+	F. Intel already had a huge user base while ARM and MIPS had virtually none.
+	G. The 80386 contained a newer instruction set architecture.
+
+206. With the arrival of multimedia applications in the late 1990s, Intel introduced   (150)
+	A. Special registers for audio and video data.
+	B. A brand new microarchitecture.
+	C. Micropipelining.
+	D. Separate audio and video instructions.
+	E. Nothing new since its current instructions were adequate.
+	F. Instructions which could operate on multiple data at once.
+	G. Single Instruction Multiple Data (SIMD) instructions.
+
+207. A large number (more than 200) instructions were added to the intel instruction set   (150)
+	A. Between 1999 and 2001 for floating point and multimedia purposes
+	B. In 1978 when the 8080 first went to market
+	C. In 2006 when silicon prices dropped.
+	D. In 1985 with the first 16-bit processor
+	E. Because of the demand for audio and video processing
+	F. In 2012 when the power wall became a significant obstacle.
+	G. With the release of the first Pentium chip
+
+208. In the 1970s, a company named Zilog produced a better chip than Intel, but used intel's architecture.  More recently, what company has been doing this?   (151)
+	A. Motorola
+	B. AMD
+	C. Sun
+	D. ARM
+	E. Oracle
+	F. Advanced Micro Devices
+	G. IBM
+
+209. Intel's widest register is ____ bits wide   (152)
+	A. 256
+	B. 2^8
+	C. 1024
+	D. 32
+	E. 128
+	F. 512
+	G. 64
+
+210. In general, Intel's arithmetic instructions   (152)
+	A. A source and destination register be the same.
+	B. Are not backward compatible.
+	C. Perform integer and floating-point calculations equally quickly.
+	D. Have not changed since their inception in 1978.
+	E. Execute faster than others'.
+	F. Require that the destination register be one of the source registers.
+	G. Are a feat of modern engineering.
+
+211. Registers in the current Intel processors are the same length   (153)
+	A. T
+	B. F
+
+212. An addressing scheme where the address is a base register plus 2^n times an index (where n is specified in 2 or 3 bits of the instruction) is called   (154)
+	A. Base plus scaled index.
+	B. Offset.
+	C. Computed.
+	D. Referenced.
+	E. Biased.
+	F. DIrected.
+	G. Scaled.
+
+213. The Intel instruction set has special instructions for string move and string compare   (154)
+	A. F
+	B. T
+
+214. Which processor uses instructions which are of different lengths   (155)
+	A. Samsung
+	B. ARM
+	C. AMD
+	D. MIPS
+	E. Cortex
+	F. RISC
+	G. Intel
+
+215. The reason the "ugly" Intel architecture has survived over the years is that   (157)
+	A. Intel architects didn't believe the MIPS design rules.
+	B. The CPU marketplace is harsh and demands superior engineering.
+	C. It followed IBM's market strategy.
+	D. It was adopted for the IBM PC in the early 1980s.
+	E. Intel successfully lobbied for congressional support.
+	F. It is not backward compatible.
+	G. It has huge market forces behind it.
+
+216. The market in which Intel processors do not do well is   (158)
+	A. Desktops
+	B. Cloud machines.
+	C. Laptops
+	D. Web servers
+	E. Servers
+	F. Cell phones
+	G. Personal Mobile Devices
+
+217. Early microprocessors which disappeared from the market did so because   (158)
+	A. Slow clock speeds
+	B. Unreliable performance
+	C. Insufficient address bits
+	D. They were too expensive.
+	E. They couldn't handle expanding memory demands.
+	F. Heat load
+	G. They were too inexpensive.
+
+218. The 64-bit ARM v8 is an extension of the design of the 32-bit ARM v7.   (159)
+	A. F
+	B. T
+
+219. Which is not a MIPS design principle?   (161)
+	A. Smaller is faster.
+	B. Speed = Efficiency.
+	C. Simplicity favors regularity.
+	D. Good design demands good compromises.
+
+220. Integer addition and subtraction use the same add-and-carry logic in the CPU.   (178)
+	A. F
+	B. T
+
+221. Computers write numbers to memory differently than characters   (178)
+	A. T
+	B. F

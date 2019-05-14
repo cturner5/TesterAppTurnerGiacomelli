@@ -1,12 +1,14 @@
 import openpyxl
 import pprint
-
+import re
 
 class Quiz:
     def __init__(self):
         self.fileName = ""  # name of file to be used
         self.questions = []  # list of questions
         self.answers = []  # list of answers, answers list corresponds with the questions in the questions list
+        self.numbers = []  # list of question numberts
+        self.numbers_answers = [] # list of dictionaries, each element's key is a number and its value is the answer to its corresponding question
         self.quiz = {}  # dictionary made by combining questions and answers
 
     def parseQuestionsXlsx(self, fileName):
@@ -21,14 +23,13 @@ class Quiz:
                 tempString = tempString + str(cellObj.value) + "\n"
             elif cellObj.value != None and sheet['C'][cellObj.row - 1].value != None:
                 tempString = tempString + str(cellObj.value) + " " + str(sheet['C'][cellObj.row - 1].value) + "\n"
-            elif cellObj.value == None:
+            if cellObj.value == None:
                 self.questions.append(tempString)
                 tempString = ""
 
         self.questions.append(tempString)
 
-        for x in range(len(self.questions)):
-            print(self.questions[x])
+        return self.questions
 
     def parseAnswersXlsx(self, fileName):
 
@@ -43,10 +44,22 @@ class Quiz:
 
         for cellObj in sheet['A']:
             self.answers.append(str(cellObj.value))
+        print(len(self.answers))
 
-        for x in range(len(self.answers)):
-            print(self.answers[x])
+        samp = ""
+        for i in self.answers:
+            samp = samp + i
 
+        numbersRegex = re.compile(r'\d+')
+
+        self.numbers = [x for x in numbersRegex.findall(samp)]
+
+        for i in range(len(self.numbers)):
+            self.numbers_answers.append({self.numbers[i]: self.answers[i]})
+
+        pprint.pprint(self.numbers_answers)
+
+        return self.numbers_answers
         # questions_or_questionRange
 
     def questions_or_questionRange(self):
@@ -115,7 +128,7 @@ class Quiz:
             return (lower, upper)
     # questions_or_questionRange
 
-    def parseQuizTxt(self):
+    def parseQuizXlsx(self):
         # creates final data structure of form {question:{number:answer}}
         # needs only self.numbers_answers and self.questions
 

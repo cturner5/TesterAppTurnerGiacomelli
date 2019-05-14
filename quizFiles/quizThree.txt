@@ -1,0 +1,751 @@
+221. Computers write numbers to memory differently than characters   (178)
+	A. T
+	B. F
+
+222. Twos complement is   (179)
+	A. A way of adding positive numbers
+	B. A way to speed up multiplication.
+	C. A way of representing negative numbers
+	D. A way of preventing overflow
+	E. A simplification for long division
+	F. A way of changing the sign of a number.
+	G. How to figure out the sign of the result.
+
+223. Because binary representation involves only 0's and 1's, carrying in addition is unnecessary.   (179)
+	A. F
+	B. T
+
+224. In binary, 1011 + 1 =   (179)
+	A. 0x1100
+	B. 1100
+	C. 0x1010
+	D. 1111
+	E. 0xC
+	F. 1010
+	G. 11
+
+225. In binary, 1011 - 100 =   (179)
+	A. 1010
+	B. 0xE
+	C. 0xC
+	D. 1100
+	E. 111
+	F. 11
+	G. 0x7
+
+226. In a 32-bit register, overflow can occur when adding a positive and negative number   (179)
+	A. T
+	B. F
+
+227. Which does not indicate an overflow?   (179)
+	A. Subtracting two negative numbers and getting a positive result.
+	B. adding two negative numbers and getting a positive result
+	C. Borrowing from the sign bit when subtracting
+	D. Adding two positive numbers and getting a negative result
+	E. Subtracting a positive number from a negative number and getting a positive result.
+	F. Subtracting a negative number from a positive number and getting a negative result.
+	G. Subtracting one positive number from another and getting a negative result.
+
+228. In binary,  1111...10001 - 1111...11000 =   (180)
+	A. 0xfffffff9
+	B. 0xffffffff
+	C. 1111...11001
+	D. 0000...01000
+	E. 1111...11000
+	F. 0xfffffff7
+	G. 1000...01001
+
+229. When MIPS detects an overflow condition a(n) _____ occurs   (180)
+	A. dump
+	B. branch
+	C. halt
+	D. reboot
+	E. interrupt
+	F. exception
+	G. crash
+
+230. In which situation does an overflow occur?   (180)
+	A. Adding two positive numbers and getting a negative result.
+	B. Adding two negative numbers and getting a negative result.
+	C. Adding a positive and negative number and getting a negative result.
+	D. Adding a positive and negative number and getting a positive result.
+
+231. Processing data for multimedia, especially graphics, has led to   (181)
+	A. quad-precision floating-point instructions.
+	B. three-color processors
+	C. Long registers with carry partitions.
+	D. Smaller instruction sets.
+	E. wider cache buses
+	F. Processor heat load
+	G. register partitioning for vector math
+
+232. In multimedia arithmetic, an overflow often results in   (181)
+	A. Exceptions.
+	B. Achieving a maximum value, but no greater.
+	C. an exception
+	D. saturation
+	E. a black screen
+	F. Numbers less than zero.
+	G. a blue screen
+
+233. The EPC register is used for   (182)
+	A. Storing the address of the instruction causing overflow
+	B. Storing the PC when an exception occurs.
+	C. Determining the cause of the exception.
+	D. resuming a halted program
+	E. performing a crash dump
+	F. handling environmental protection faults
+	G. Figuring out if the program will be terminated or not.
+
+234. After an exception, the EPC register contains   (182)
+	A. The system exit instruction.
+	B. the PC when the exception occurred.
+	C. the address of the exception handling routine
+	D. The reason why the exception occurred.
+	E. The location of the crash dump
+	F. The address of the instruction where processing may resume.
+	G. the result of the overflow calculation
+
+235. Addition can be speeded up by   (182)
+	A. anticipating the high-order carry bit
+	B. adding smaller numbers
+	C. increasing the processor voltage
+	D. widening the address bus
+	E. Performing add operations in parallel with more hardware.
+	F. Using floating point numbers.
+	G. Lengthening the clock cycle.
+
+236. Twos-complement is a method of   (182)
+	A. Multiplying numbers.
+	B. A method of preventing overflow.
+	C. Adding logarithms.
+	D. Converting a number such that its sum with the original number is zero.
+	E. A method of detecting overflow.
+	F. Expressing negative numbers
+	G. Performing addition.
+
+237. Ignoring the sign bit, the length of the product of an m-bit multiplicand and an n-bit multiplier is   (183)
+	A. up to m + n bits
+	B. 2m bits
+	C. The sum of the lengths of the shortest expression of the operands.
+	D. 64 bits.
+	E. m + n + 1 bits
+	F. 2n bits
+	G. 32 bits.
+
+238. A simple implementation of a multiplier   (183)
+	A. Holds the product in a 48-bit register (not including the sign bit)
+	B. Is also the quickest.
+	C. shifts the multiplicand left for each bit of the multiplier, and adds it to the product if the multiplier bit is 1
+	D. Can be pipelined.
+	E. Anticipates the carry at the mid-point
+	F. Performs a binary version of elementary school-style multiplication.
+	G. Calculates the logarithm of the multiplier and multiplicand, adds them and then takes the antilog to form the product
+
+239. The most common use of processor arithmetic is for   (184)
+	A. floating point multiplies.
+	B. graphics calculations.
+	C. Address calculations
+	D. floating-point adds.
+	E. Determining locations in memory.
+	F. Calculating colors.
+	G. calculating loop variables.
+
+240. Multiplying two 32 bit numbers   (184)
+	A. Must be 64 bits long.
+	B. Can result in a 64-bit product
+	C. Can overflow a 64-bit register.
+	D. Cannot overflow a 32-bit register
+
+241. A 32-bit multiplier can be constructed from a single 64-bit register which can be read and written in different places.   (186)
+	A. F
+	B. T
+
+242. Signed multiplication   (187)
+	A. Performs right-shifts if either multiplier or multiplicand but not both is negative
+	B. XORs the sign bits to determine the sign of the result.
+	C. Throws an exception if the sign of the multiplier and multiplicand is not the same as the sign of the product
+	D. forms the product from unsigned numbers and two-complements the product if the multiplicand and multiplier signs are different
+	E. Is no different fron unsigned multiplication.
+	F. Cannot cause overflow conditions.
+	G. Performs successive subtractions to determine the result
+
+243. Moore's law allows multiplications to be faster because   (187)
+	A. More transistors means more adders, up to one per multiplier bit
+	B. High clock frequency means shorter clock period.
+	C. Loop unrolling provides adequate parallelism.
+	D. Faster circuits will consume less power.
+	E. Lower voltages operate with less resistance.
+	F. Longer instructions can do more.
+	G. More hardware means operations can be done in parallel.
+
+244. How is multiply overflow handled in MIPS?   (188)
+	A. There is no overflow if the multiplier and multiplicand are both less than 32 bits
+	B. It will not occur if a 64-bit result is used.
+	C. the sign-bit logic prevents overflow
+	D. Software must check the hi half of the product
+	E. The EPC register contains the result of the overflow.
+	F. It triggers an exception.
+	G. The 32-bit product register is long enough to prevent overflow
+
+245. Faster multipliers   (188)
+	A. Work better with smaller numbers.
+	B. Perform shifts and adds sequentially.
+	C. Use much higher clock speeds.
+	D. Can be created with less hardware than a standard multiploer.
+	E. Cannot be pipelined.
+	F. Are easier to implement than faster dividers.
+	G. Perform more than one operation at once
+
+246. An invalid mathematical operation which can happen when computers do calculations is   (189)
+	A. Adding zero to a negative number.
+	B. Arithmetic overflow.
+	C. Multiplying by zero
+	D. Division by zero
+	E. Adding zero
+	F. Dividing by 1.
+	G. Subtracting minus zero
+
+247. The two parts of the integer division result are   (189)
+	A. The quotient and the remainder
+	B. The dividend and the divisor
+	C. The quotient and the dividend
+	D. Stored in the HI and LO registers.
+	E. Stored in consecutive integer registers, e.g., $s0 amd $s1.
+	F. Stored in consecutive floating point registers, e.g., $f0 and $f1.
+	G. The dividend and the remainder
+
+248. The two operands of the division process are   (189)
+	A. The quotient and the dividend
+	B. Must have the same sign.
+	C. Are stored in the HI and LO registers.
+	D. The dividend and the divisor
+	E. The dividend and the remainder
+	F. The quotient and the remainder
+	G. Can be stored in conventional registers.
+
+249. A simple and efficient way to implement division is to   (189)
+	A. use hardware to perform "grammar school" division
+	B. Implement long division in hardware.
+	C. Look up the answers in a division table.
+	D. perform successive subtractions at clock speed.
+	E. Run multiply hardware with reversed voltages.
+	F. Group bits into fours and perform hexadecimal division.
+	G. Use transistors to add bits.
+
+250. Whereas a simple multiplication algorithm is based on read a bit, conditionally add and shift, a simple division is based on   (190)
+	A. Take the log2 of the divisor and shift left that many bits.
+	B. Successive subtractions without shifting.
+	C. Add and shift the opposite direction.
+	D. Checking to see if the result of a subtraction is positive, and setting a bit if so.
+	E. Take the log2 of the divisor and shift right that many bits.
+	F. Subtract and shift and conditionally write a bit
+	G. Judicious placements of ones and zeros in the quotient.
+
+251. Signed division can be done by   (192)
+	A. XORing the sign bits of the operands and calculating the signs of the remainders.
+	B. Checking for overflow.
+	C. Doing unsigned division and setting the sign of the quotient based on sign of the divisor
+	D. Doing unsigned division, totally disregarding signs
+	E. Doing unsigned division and setting the signs of the quotient and remainder based on signs of the operands
+	F. Transistors which have three states.
+	G. Doing unsigned division and setting the sign of the remainder based on sign of the dividend
+
+252. The sign of an integer divide is   (192)
+	A. The OR of the dividend and divisor signs.
+	B. The NOR of the dividend and divisor signs.
+	C. The XOR of the dividend and divisor signs.
+	D. The AND of the dividend and divisor signs.
+
+253. In determining the sign of the quotient, what rule must always hold?   (193)
+	A. The remainder is always positive.
+	B. Dividend = Quotient * Divisor + Remainder
+	C. The sign bit of the remainder is the XOR of the operands' sign bits.
+	D. Remainder = Quotient * Divisor - Dividend
+	E. sign of Remainder = sign of quotient
+	F. sign of Remainder = sign of divisor
+	G. Remainder = Dividend - Quotient * Divisor 
+
+254. Using many adders to speed up division   (194)
+	A. Is difficult because the result is unknown.
+	B. Works because fast multiplies can check the answer.
+	C. Is limited in its effectiveness because there are branches in the logic.
+	D. won't work because you also have to calculate the remainder.
+	E. works because of Moore's law.
+	F. Is difficult because division involves subtraction.
+	G. Won't work because decisions have to be made after the subtractions.
+
+255. If by mistake you divide a positive number by a negative number using unsigned divide (divu)   (194)
+	A. The remainder is the dividend.
+	B. The remainder and the quotient are interchanged.
+	C. The quotient is zero and the remainder is the divisor
+	D. The result will overflow
+	E. An exception occurs
+	F. The quotient is zero.
+	G. The remainder will be zero.
+
+256. One way of making the division process faster is to   (194)
+	A. Produce multiple results and pick the one that is closest to the real answer.
+	B. Increase the power supply voltage.
+	C. Use combinational logic to obtain results rather than looking them up n a table.
+	D. Guess the result if being wrong doesn't change the answer.
+	E. Looking up partial results in a table rather than use combinational logic to obtain them.
+	F. Add cache memory.
+	G. Guess intermediate results and make changes if the guesses are wrong.
+
+257. Binary representations of floating point numbers have greater range but less precision than binary representations of integers   (196)
+	A. T
+	B. F
+
+258. Normalized scientific notation   (196)
+	A. Is widely used in integer calculations.
+	B. Applies to binary but not decimal numbers.
+	C. Means the number left of the point is not zero.
+	D. Makes it difficult to multiply numbers.
+	E. In binary means that there is only a 1 to the left of the binary point.
+	F. Makes sense only in the decimal system.
+	G. Represents any real number with infinite precision.
+
+259. A floating point number is composed of   (197)
+	A. Exponent, Fraction, Logarithm
+	B. Sign, Characteristic, Mantissa
+	C. 16 bits for the signed numerator, 16 bits for the denominator.
+	D. One bit for the sign, 8 for the exponent and 23 for the fraction.
+	E. Sign, Extent
+	F. The logarithm of the number.
+	G. Sign, Exponent, Fraction
+
+260. In single-precision binary floating point notation, the exponent is ______ bits long   (198)
+	A. Five
+	B. Ten
+	C. 23
+	D. 11
+	E. 52
+	F. 8
+	G. Eight
+
+261. In single-precision binary floating point notation, the fraction is ______ bits long   (198)
+	A. Sixteen
+	B. Nine
+	C. 11
+	D. 52
+	E. Twenty-three
+	F. 8
+	G. 23
+
+262. The standard for floating point notation is   (198)
+	A. NFPA-1002
+	B. ASA-400
+	C. ISO-9000
+	D. IEEE-754
+
+263. the NaN notion can result from   (199)
+	A. Divide by zero
+	B. Performing an operation with a NaN value.
+	C. Subtracting two numbers which are nearly the same
+	D. Incorrect use of associativity.
+	E. A sign miscompare
+	F. Adding a large positive and negative numbers
+	G. Multiplication by zero.0
+
+264. Negative exponents in floating point binary are represented as twos-complement numbers   (200)
+	A. F
+	B. T
+
+265. The length of a single-precision floating point binary number is ____ bits   (200)
+	A. 16
+	B. 64
+	C. 32
+	D. 128
+
+266. The length of a double-precision floating point binary number is ____ bits   (200)
+	A. 64
+	B. 128
+	C. 32
+	D. 16
+
+267. which number below is the hex representation of a negative floating point number?   (202)
+	A. 0x08010000
+	B. 0x80100000
+	C. 0x0C010000
+	D. 0x10800000
+	E. 0xC0100000
+	F. 0x20400000
+	G. 0x40200000
+
+268. Adjusting exponents and adding fractional parts describes   (202)
+	A. Integer addition.
+	B. Floating point addition.
+	C. Integer multiplication.
+	D. Floating point multiplication.
+
+269. Which is (are) the most complex operation(s) for floating point calculations in the list below?   (203)
+	A. Division
+	B. Subtraction
+	C. Addition
+	D. Rounding
+	E. magnitude sorting
+	F. Comparison with zero
+	G. Multiplication.
+
+270. Another name for the fractional part of a floating point number is the   (204)
+	A. Significand.
+	B. Denominator.
+	C. Reduction.
+	D. Precision.
+	E. Numerator.
+	F. Exponent.
+
+271. The first step in adding two floating point numbers is   (205)
+	A. Make the fractional parts equal.
+	B. Express the numbers in binary fractions.
+	C. Make the exponents equal
+	D. Compare the signs.
+	E. Convert negative numbers to twos-complement notation.
+	F. Adjust the numbers so the exponents are the same.
+	G. Make the numbers the same length.
+
+272. Normalization is   (205)
+	A. Adjusting the exponent so that the number is >=1 and < 2.
+	B. The same as rounding.
+	C. Converting the number from binary to hexadecimal.
+	D. Setting the exponents so they are equal.
+	E. Making the fractional part equal to zero.
+	F. Ensuring the binary scientific notation has only a 1 left of the binary point.
+	G. Making the exponent equal to zero.
+
+273. When binary floating point numbers are multiplied, what in the following list does not happen?   (206)
+	A. Fractional parts are multiplied.
+	B. The result is rounded.
+	C. Twos-complementation is performed.
+	D. Exponents are made equal.
+	E. Exponents are added.
+	F. Signs are XORed.
+	G. The result is normalized.
+
+274. Which is not a step in multiplying two floating point numbers?   (209)
+	A. Normalizing
+	B. Multiplying the fractional parts
+	C. Aligning the exponents
+	D. Rounding
+
+275. MIPS supports single-precision floating point, but not double-precision floating point   (211)
+	A. F
+	B. T
+
+276. If a double-precision floating point number is loaded into register $f2, what other register is used   (211)
+	A. $f3
+	B. None
+	C. $f0
+	D. $0
+	E. $f1
+	F. $s3
+
+277. In MIPS Assembly Language, which is the instruction for a single-precision operation?   (212)
+	A. smul
+	B. mul.s
+	C. lw
+	D. adds
+	E. div.s
+	F. muls
+	G. mul
+
+278. Double precision floating point numbers may not accurately represent decimal numbers   (218)
+	A. F
+	B. T
+
+279. The big difference between the IEEE-754 representation of 32-bit and 64-bit floating point numbers is   (218)
+	A. The precision of the numbers
+	B. The speed at which computations are performed.
+	C. The magnitude of the numbers
+	D. The size of the exponent.
+	E. The range of the numbers
+	F. The length of the numbers
+	G. The number of bits allocated to the fractional part.
+
+280. Which is not a length of floating point data?   (221)
+	A. 8 bits
+	B. 32 bits
+	C. 16 bits
+	D. 64 bits
+
+281. Enabling a 128-bit register to perform four addition operations on four 32-bit values at one is done by   (222)
+	A. Increasing cache size.
+	B. Putting more transistors on a chip.
+	C. Lengthening the word length.
+	D. Decreasing the cycle time.
+	E. Carry partitions.
+	F. Stopping the carry bit on 32-bit boundaries.
+	G. Widening the memory bus.
+
+282. Subword parallelism is another name for what happens in   (222)
+	A. Simultaneous Multi-Threading (SMT)
+	B. Unsigned addition.
+	C. Floating point multiply
+	D. Single Instruction Multiple data
+	E. Floating point addition
+	F. Executing half-word load/store instructions.
+	G. SIMD
+
+283. ARM's NEON extensions   (223)
+	A. Allow registers to be viewed as 32 32-byte registers or 64 16-byte registers
+	B. Allow registers to be viewed as both 32 8-byte registers and 16 16-byte registers.
+	C. Provide multimedia support.
+	D. Support quad-precision calculations.
+	E. Support 64-bit floating point numbers.
+	F. Provide simultaneous multithreading support
+	G. Can perform 256-bit adds
+
+284. MMX and SSE   (224)
+	A. Are Intel multi-media instruction extensions.
+	B. Were never adopted by AMD.
+	C. Are MIPS multi-media instruction extensions.
+	D. Stand for matrix memory extensions and Single-precision Signed Evaluation.
+	E. Stand for Multimedia extensions and streaming SIMD extensions.
+	F. Add about 100 instructions to the ARM instruction set.
+	G. Add about 150 instructions to the x-86 instruction set.
+
+285. Intel SIMD instructions can process ____ double-precision floating point value(s) in a 128-bit register   (224)
+	A. 8
+	B. Three
+	C. 6
+	D. 2
+	E. One
+	F. Four
+	G. Two
+
+286. Intel's widest register supports their Advanced Vector Extension (AVX) instructions.  These instructions can operate on ____ double-precision numbers at once   (225)
+	A. Two
+	B. Eight
+	C. Four
+	D. One
+	E. Six
+	F. Three
+	G. 4
+
+287. AVX is   (225)
+	A. Intel's Advanced Vector Extensions.
+	B. ARM Vector Extensions.
+	C. Capable of performs 2 double-precision operations at once.
+	D. Addition and Vector multiplication
+	E. Augmented Virtual Extensions.
+	F. AMD's improvement on Intel's SIMD instructions.
+	G. Intel's follow-on to MMX.
+
+288. Which has the least lines of code?   (226)
+	A. Unoptimized DGEMM written in C
+	B. Unoptimized DGEMM written in conventional AVX assembly.
+	C. Optimized DGEMM written in conventional X86 assembly.
+	D. Optimized DGEMM written in C.
+	E. Unoptimized DGEMM written in conventional X86 assembly.
+	F. Optimized DGEMM written in conventional AVX assembly.
+
+289. Compilers need no assistance optimizing vector code for routines like matrix multiply   (227)
+	A. F
+	B. T
+
+290. New instructions can be added to the instruction set without changing the compiler.   (227)
+	A. F
+	B. T
+
+291. C and C++ compilers produce better-optimized AVX (Advanced Vector Extension) code than is possible by hand-coding   (227)
+	A. T
+	B. F
+
+292. Unlike in mathematics, floating point addition is not associative   (229)
+	A. F
+	B. T
+
+293. Parallel execution strategies which work for integer types also work for floating point types.   (230)
+	A. T
+	B. F
+
+294. Only theoretical mathematicians care about floating point accuracy.   (231)
+	A. F
+	B. T
+
+295. The general name for the unit used to operate on or hold data within a processor is called a(n)   (241)
+	A. Pipeline stage
+	B. Register
+	C. Datapath element
+	D. memory bank
+
+296. Which is not a feature of the MIPS processor?   (244)
+	A. There are only two conditional branch instructions
+	B. The only memory accesses are the load and store instructions.
+	C. The set of arithmetic instructions are simple building-blocks
+	D. Complex instructions are longer (more bytes) than simpler instructions
+
+297. The LW instruction requires that ___ register(s) be read.   (245)
+	A. Two
+	B. No
+	C. Three
+	D. One
+
+298. Which is not an element of the MIPS CPU   (246)
+	A. Arithmetic Logic Unit
+	B. Instruction Memory
+	C. Flash memory
+	D. Program Counter
+	E. Data Memory
+	F. Interrupt handler
+	G. Register File
+
+299. The Arithmetic Logic Unit is not used for which set of instructions   (246)
+	A. Jump (J)
+	B. I-types
+	C. J-types
+	D. Branch (BEQ, BNE)
+	E. R-types
+	F. Store (SW, SH, SB)
+	G. Load (LW, LH, LB)
+
+300. MUX is the abbreviation for which device?   (247)
+	A. Memory access
+	B. Memory storage
+	C. Cache blocks
+	D. Multiplier
+	E. Multicrossfeed
+	F. Multiplexer
+
+301. What happens in edge-triggered clocking?   (249)
+	A. Instruction execution determines when the clock pulse starts
+	B. The clock pulse starts on the falling edge
+	C. State is recorded on the rising edge.
+	D. Reads and writes occur during the clock pulse
+	E. COmbination logic starts before the pulse.
+	F. Combinational logic continues after the pulse.
+	G. Writes occur on the rising edge of the clock pulse
+
+302. When does combinational logic happen?   (249)
+	A. Between the falling edges of two adjacent clock pulses
+	B. Between adjacent cycles
+	C. After Instruction Fetch and before Instruction Decode
+	D. During instruction Fetch
+	E. Between the rising edges of two adjacent clock pulses
+	F. After the state is sampled and before the state is stored
+	G. During Data Write
+
+303. If a state element is not read on every clock edge,    (250)
+	A. It cannot be read.
+	B. A multiplexor must be used.
+	C. It requires a control signal to be read.
+	D. It must be written to main memory.
+
+304. Adding sign-extended, shifted-left-2 immediate data to the program counter is done in the _______ instruction.    (252)
+	A. JAL
+	B. BEQ
+	C. ADDI
+	D. J
+
+305. To add two numbers, you would use what device?   (252)
+	A. MUX
+	B. Arithmetic Logic Unit
+	C. Cache
+	D. Control Unit
+	E. Branch control
+	F. ALU
+	G. Sign-extender
+
+306. Which device determines which instruction to read next?   (253)
+	A. The control unit.
+	B. The instruction Multiplexer
+	C. The Write-back logic
+	D. The PC
+	E. Memory Access
+	F. The program counter
+	G. The ALU
+
+307. How many five-bit inputs does the Register File have   (253)
+	A. Non
+	B. Four
+	C. Two
+	D. Five
+	E. Three
+	F. One
+
+308. Which is not used in the execution of a BEQ instruction?   (254)
+	A. Sign extender.
+	B. ALU.
+	C. Register file.
+	D. Data memory.
+
+309. Which action does a MIPS branch instruction not do?   (254)
+	A. Write to the register file.
+	B. Shift the immediate data left two bits.
+	C. Sign extend the immediate data
+	D. Subtract the contents of one register from another.
+
+310. Which device accepts 16-bit immediate data and produces a 32-bit output?   (255)
+	A. The hazard detector
+	B. Sign Extender
+	C. Arithmetic Logic Unit
+	D. The control unit0
+	E. Program Counter
+	F. Register file
+
+311. What happens to the 16-bit sign-extended offset of a branch instruction before it is added to the program counter contents?   (256)
+	A. It depends on the result of the compare
+	B. It is shifted left two bits
+	C. it is added to the program counter.
+	D. It replaces the program counter.
+	E. It is shifted right two bits
+	F. it is set to zero
+
+312. The ALU zero output is used in handling which instruction?   (256)
+	A. SLT
+	B. ADD
+	C. JAL
+	D. BNE
+
+313. How many registers does a branch instruction read from the register file?   (258)
+	A. One
+	B. None
+	C. Two
+	D. Three
+	E. Five
+	F. Four
+
+314. How many registers does an R-type instruction read from the register file?   (258)
+	A. Five
+	B. Three
+	C. None
+	D. Four
+	E. Two
+	F. One
+
+315. In the branch instructions, the number of instructions to skip is given in the immediate field.  How long is this field?   (262)
+	A. 18 bits
+	B. 17 bits
+	C. 5 bits
+	D. 26 bits
+	E. 15 bits
+	F. 16 bits
+
+316. Which instruction calculates an address with the ALU and then uses that address in main memory?   (265)
+	A. SW
+	B. J
+	C. LW
+	D. SLT
+	E. BEQ
+	F. ADDI
+
+317. Which instruction has a 26-bit immediate field?   (270)
+	A. LW
+	B. J
+	C. ADD
+	D. ADDI
+	E. SW
+	F. BEQ
+
+318. The settings of the multiplexors is how each instruction is processed individually.  What unit controls most of the mux settings?   (271)
+	A. The control unit.
+	B. The instruction fetch unit
+	C. Instruction memory
+	D. The ALU
+	E. The register file
+	F. The program counter
+
+319. Instructions which execute in a single clock cycle execute faster than instructions requiring multiple clock cycles   (272)
+	A. F
+	B. T

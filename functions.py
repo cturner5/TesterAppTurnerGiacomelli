@@ -7,14 +7,7 @@ import QuizParserXlsx
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-
-'''
-current constraints: 
-quizFile and answerFile must start with 1
-hence, they must be in sync with one another, or else it doesn't fucking work :)))))))))))))
-this is reasonable, as a quiz must have an answer for every question in it. else there is no point in 
-giving someone a quiz if it can't be graded, is there? 
-'''
+import datetime
 
 #login
 def login():
@@ -34,7 +27,7 @@ def login():
             line = line[:-1]
         accountsFileList.append(line)
 
-    print(accountsFileList)
+    #print(accountsFileList)    #testing
 
     #placing info from list into dictionary
     counter = 0
@@ -45,7 +38,7 @@ def login():
         counter += 1
         place += 1
 
-    pprint.pprint(accounts)
+    #pprint.pprint(accounts)    #testing
 
     while True:
         #printing menu + asking for user input
@@ -129,6 +122,7 @@ def login():
             insertionList.append("\n" + password)
         #if user presses something other than 1 or 2, program terminates
 
+        #exit if not 1 or 2
         else:
             sys.exit()
 
@@ -140,57 +134,69 @@ def login():
     return (usernameSubmit, email)
 #login
 
-#isStrong
+# isStrong
 def isStrong(password):
-    #>= 8 characters
-    #at least one uppercase, at least one lowercase
-    #at least one digit
+    # >= 8 characters
+    # at least one uppercase, at least one lowercase
+    # at least one digit
 
-    #checking if password is atleast 8 characters long
+    # checking if password is atleast 8 characters long
     char = re.search('.{8}', password)
     if not char:
         return False
 
-    #checking if password has an uppercase character
+    # checking if password has an uppercase character
     upper = re.search('[A-Z]', password)
     if not upper:
         return False
-    #checking if password has a lowercase character
+    # checking if password has a lowercase character
     lower = re.search('[a-z]', password)
     if not lower:
         return False
 
-    #checking if password has a digit
+    # checking if password has a digit
     digit = re.search('\d', password)
     if not digit:
         return False
 
     return True
-#isStrong
+# isStrong
 
-#printQuizMenu
+# printQuizMenu
 def printQuizMenu():
+    # this function prints a quiz menu. this menu is generated based on the files in the quizFiles directory
+    # menu data structure
     menuDict = {}
+    # counter corresponds to the key press each quizFile is to be assigned
     counter = 1
+    # creting a list of files in quizFiles directory
     files = os.listdir("quizFiles")
     fileNames = [x for x in files]
+    # iterating over the list of quizFiles, assigning a key press to each, then printing.
     for i in fileNames:
-        if i[-4:] == ".txt":
+        if i.endswith(".txt") or i.endswith(".xlsx"):
             menuDict[counter] = i
             print(str(counter) + ": " + i)
             counter += 1
 
+    # return the menu dictionary
     return menuDict
-#printQuizMenu
+# printQuizMenu
 
-#selectQuiz
+# selectQuiz
 def selectQuiz():
+    # this function asks user if they would like to take a quiz or exit the program.
+    # if they choose to take a quiz, printQuizMenu() is called and user is prompted to select the quiz they want.
+
+    #statement allowing user
     print("Press '1' to take a quiz, press any other key to exit: ")
     if input() != '1':
         print("Goodbye.")
         sys.exit()
     print("Enter the number corresponding to the quiz you would like to take: ")
+    # calling the printQuizMenu function and assigning its returned dictionary to a variable
     menuSelect = printQuizMenu()
+    # selection statement to select a quiz. handles exceptions if an invalid key press is inputted
     while True:
         try:
             selection = int(input())
@@ -200,12 +206,15 @@ def selectQuiz():
         except ValueError:
             print("Quiz not found, please select an existing quiz: ")
 
+    # returns a list consisting the the number corresponding to their selected quiz and the file name of the
+    # selected quiz
     return [selection, menuSelect[selection]]
-    #print menu of available quizzes
 #selectQuiz
 
 #saveScore
 def saveScore(username, score):
+    # saving a score to its respecting user's stat file in the userStats directory
+
     filename = str("userStats\\" + username + "Stats.txt")
     scoreFile = open(filename, 'a')
     scoreFile.write(score + '\n')
@@ -213,41 +222,71 @@ def saveScore(username, score):
 #saveScore
 
 #emailScore
-def emailScore(score, email):
+def emailScore(score, email, username):
 
     if email != None:
-        message = "Subject: Your quiz score is " + str(score)
+        # message = "Subject: Your quiz score is " + str(score)
+
+        # placing the contents of the user's score file into a string to be placed in the body of the email
+        filename = str("userStats\\" + username + "Stats.txt")
+        scoreFile = open(filename, 'r')
+        body = scoreFile.readlines()
+        bodyMsg = ''
+        for i in body:
+            bodyMsg += i
+        scoreFile.close()
+
+        # making a formatted string to put date+time in subject line
+        d = datetime.datetime.today()
+        year = str(d.year)
+        month = str(d.month)
+        day = str(d.day)
+        hour = str(d.hour)
+        minute = str(d.minute)
+        currentDateTime = month + "/" + day + "/" + year + "  " + hour + ":" + minute
+
+        # loging information for the program's email account
         me = r"testerappcs3030@gmail.com"
         my_password = r"generic1234"
+        # email address of user
         you = email
 
-        # Send the message via gmail's regular server, over SSL - passwords are being sent, afterall
+        # formatting message
+        message = MIMEMultipart()
+        message['From'] = me
+        message['To'] = you
+        message['Subject'] = username + ", your quiz scores - " + currentDateTime + ""
+        message.attach(MIMEText(bodyMsg))
+
+        # using gmail's regular server
         s = smtplib.SMTP_SSL('smtp.gmail.com')
-        # uncomment if interested in the actual smtp conversation
-        # s.set_debuglevel(1)
-        # do the smtp auth; sends ehlo if it hasn't been sent already
+        # s.set_debuglevel(1)   # testing
+        # s.ehlo()  # testing
         s.login(me, my_password)
 
-        s.sendmail(me, you, message)
+        # sending email
+        s.sendmail(me, you, message.as_string())
         s.quit()
-#emailScore
+# emailScore
 
 # administerQuiz
 def administerQuiz(questionsOrQuestionRange, quiz):
+    # gives quiz to user, question by question.
     if questionsOrQuestionRange[1] == 0:
         # if the second element of the tuple is 0, then the quizzer gives each question sequentially
         right = 0
         wrong = 0
-        for question in quiz:
+        for i in range(questionsOrQuestionRange[0]):
             print('\n')
-            print(question)
+            quizList = quiz.keys()
+            quizList = [x for x in quizList]
+            print(quizList[i])
             print("Enter your answer: ")
             answer = input()
-            temp = quiz.get(question)
+            temp = quiz.get(quizList[i])
             temp = [x for x in temp.values()]
             for j in temp:
                 answers = j
-            # print(what)
             if answer.upper() in answers:
                 right += 1
             elif answer.upper() not in answers:
@@ -266,7 +305,7 @@ def administerQuiz(questionsOrQuestionRange, quiz):
             print("Enter your answer: ")
             answer = input()
             temp = quiz.get(quizList[i])
-            temp = [v for v in temp.values()]
+            temp = [x for x in temp.values()]
             for j in temp:
                 answers = j
             if answer.upper() in answers:
@@ -280,40 +319,51 @@ def administerQuiz(questionsOrQuestionRange, quiz):
     return score
 # administerQuiz
 
+# making a the session owner by calling login() function
 sessionOwner = login()
 
+# main loop for program. loop belongs to session owner
 while True:
+    # selecting a quiz
     selection = selectQuiz()
+    # placing session owner's username and email into separate variables for ease of use
     username = sessionOwner[0]
     email = sessionOwner[1]
 
+    # #two separate statements for txt files and xlsx files. each creates a quiz from its txt or xlsx file
+    # selection[1] is the file name
     if selection[1].endswith('.txt'):
         quizObj = quizParserTxt.Quiz()
+        questions = quizObj.parseQuestionsTxt(selection[1])
+        answers = quizObj.parseAnswersTxt(selection[1])
+        options = quizObj.questions_or_questionRange()
+        quiz = quizObj.parseQuizTxt()
     elif selection[1].endswith('.xlsx'):
         quizObj = QuizParserXlsx.Quiz()
+        questions = quizObj.parseQuestionsXlsx(selection[1])
+        answers = quizObj.parseAnswersXlsx(selection[1])
+        options = quizObj.questions_or_questionRange()
+        quiz = quizObj.parseQuizXlsx()
 
-    #selection[1] is the file name
-    questions = quizObj.parseQuestionsTxt(selection[1])
-    answers = quizObj.parseAnswersTxt(selection[1])
-    options = quizObj.questions_or_questionRange()
-    quiz = quizObj.parseQuizTxt()
-    quiz = quizObj.parseQuizTxt()
-    pprint.pprint(quiz)
+    # pprint.pprint(quiz)   # testing
 
+    # calling administerQuiz() and placing its return value in a variable
     score = administerQuiz(options, quiz)
+
 
     print("Would you like to save this score?")
     ifSave = input()
     if ifSave.upper() == 'YES':
         saveScore(username, score)
+    else:
+        pass
 
     print("Would you like an email of your quiz statistics?")
     ifEmail = input()
     if ifEmail.upper() == 'YES':
-        emailScore(score, email)
+        emailScore(score, email, username)
+    else:
+        pass
 
-#for i in quiz: print(i, end='')
-
-#for i in answers: print(i, end='')
 
 

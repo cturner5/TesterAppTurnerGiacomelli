@@ -13,7 +13,7 @@ class Quiz:
         self.fileName = ""  # name of file to be used
         self.questions = []  # list of questions
         self.answers = []  # list of answers, answers list corresponds with the questions in the questions list
-        self.numbers = []  # list of question numbers
+        self.numbers = []  # list of question numberts
         self.numbers_answers = [] # list of dictionaries, each element's key is a number and its value is the answer to its corresponding question
         self.quiz = {}  # dictionary made by combining questions and answers, and numbers
 

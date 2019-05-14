@@ -1,0 +1,999 @@
+1. The information technology industry accounts for about ____ percent of the United States' gross national product   (3)
+	A. 60
+	B. 10
+	C. 30
+	D. 50
+
+2. In the last 30 years, technology revolutions begun by a new computer design were stopped short by   (3)
+	A. Presidential decree
+	B. Even faster computers
+	C. Laws
+	D. Foreign competition
+
+3. Alongside the computer revolution is the ______ revolution   (4)
+	A. Travelb
+	B. Information
+	C. Electrical
+	D. Leisure
+
+4. Each time the cost of computing goes down   (4)
+	A. New market opportunities put processors into new areas of business and life.
+	B. It is more difficult for hackers to create effective exploits.
+	C. The risks associated with processor failure increase.
+	D. The cost of big IT project failure goes up.
+
+5. A terabyte is 2^___ bytes   (5)
+	A. 10
+	B. 40
+	C. 20
+	D. 30
+
+6. An embedded computer is distinguished from other types of computer by the fact that it   (6)
+	A. is built into an incredibly small space
+	B. Primarily runs a single, predetermined application
+	C. Must survive harsh operating conditions
+	D. has strict power requirements
+
+7. The role of the personal computer is now being replaced by the   (7)
+	A. wearable computer
+	B. cloud
+	C. personal mobile device
+	D. super computer
+
+8. The sales of smart phones and tablets have leveled off while the sales of PCs and conventional cell phones have continued their exponential rise   (7)
+	A. T
+	B. F
+
+9. The concept of cloud computing is most closely associated with   (7)
+	A. Vague computing
+	B. Personal Mobile Devices
+	C. Warehouse Scale Computing
+	D. Transaction Processing
+
+10. Understanding the hardware layer   (8)
+	A. builds character
+	B. is the key to an early retirement
+	C. makes you a better programmer
+	D. provides for a steady income
+
+11. Which area of performance improvement is out of the scope of this course   (9)
+	A. Algorithms
+	B. Memory systems
+	C. Programming languages
+	D. The I/O system
+
+12. Which kind of parallelism is not discussed in computer organization and architecture?   (10)
+	A. Data-level parallelism
+	B. Instruction-level parallelism
+	C. Thread-level parallelism
+	D. Circuit-level parallelism
+
+13. Which has the least influence on the performance of a computer running a program?   (10)
+	A. The I/O system and devices
+	B. The programming language or compiler
+	C. The size of the screen
+	D. The processor
+	E. The operating system
+	F. The algorithm chosen
+	G. The power supply wattage
+
+14. Moore's Law   (11)
+	A. Shows that latency is more expensive to improve than bandwidth or throughput
+	B. Relates the progress on the number of transistors per chip over time
+	C. states that performance improvements are limited by the kind of problem you are solving
+	D. Underscores the importance of parallelism
+	E. Relates power consumed by a device to capacitive load, voltage and switching frequency
+	F. Says that you should optimize tasks that are frequently performed
+	G. Gives expectations of how chip capacity will change about every two years
+
+15. Which is not one of the eight great ideas in Computer Architecture?   (11)
+	A. Reliability via redundancy.
+	B. Fail early
+	C. Make the common case fast.
+	D. Performance via pipelining.
+
+16. The notion that integrated circuit resources double every 18-24 months is known as   (11)
+	A. Amdahl's Law
+	B. Ohm's Law
+	C. Moore's Law
+	D. Boyle's Law
+
+17. The principle of prediction is based on the idea that   (12)
+	A. If you don't succeed at first, try, try again.
+	B. When the going gets tough, the tough get going.
+	C. You should eat dessert first.
+	D. It is better to ask for forgiveness than ask for permission.
+
+18. Which is not a "great idea" in computer architecture?   (12)
+	A. Flash cache.
+	B. Pipelining.
+	C. Memory hierarchy.
+	D. Branch Prediction.
+
+19. Which is not in the hierarchical layers of a system?   (13)
+	A. Hardware
+	B. Applications software
+	C. I/O software
+	D. Systems Software
+
+20. What do we call the binary representation of machine instructions?   (14)
+	A. Assembly language
+	B. Machine language
+	C. source code
+	D. Bytes
+
+21. What is the job of an assembler   (15)
+	A. Translate source code in to assembly code
+	B. Link together code modules into a single executable module
+	C. Translate assembly code into machine language
+	D. Run assembly code
+
+22. What is the job of an assembler?   (15)
+	A. It translates assembly instructions into machine instructions
+	B. It translates high-level source code into machine instructions
+	C. It translates source code into byte code
+	D. It executes machine instructions
+	E. It optimizes loop structures
+	F. It produces binary machine instructions from the assembly code text
+	G. It translates high-level source code into assembly language
+
+23. What is not an advantage of high-level code   (16)
+	A. It allows machine independence
+	B. It improves programmer productivity
+	C. It produces the most compact run-time code
+	D. It is closer to natural language
+
+24. What is the primary difference between the active matrix display and the liquid crystal display?   (17)
+	A. The LCD makes its own light.
+	B. LCD pixels are more expensive than active matrix pixels.
+	C. the active matrix display can control the intensity of each pixel.
+	D. The active matrix display consumes less power.
+
+25. Which is not one of the five classic components of a computer   (17)
+	A. Control
+	B. Memory
+	C. Input
+	D. Datapath
+	E. Display
+	F. Output
+	G. Pointing device
+
+26. Most liquid crystal displays (LCDs) now rely on ______ technology   (18)
+	A. Amplitude Modulation
+	B. Faster Raster
+	C. Active Matrix
+	D. Advanced Module
+
+27. Two important laws in computer performance are   (19)
+	A. Ampere's and Ohm's
+	B. Amdahl's and Planck's
+	C. Moore's and Ampere's
+	D. Moore's and Amdahl's
+
+28. The advantage of capacitive sensing is that   (19)
+	A. It can more precisely locate the point of touch
+	B. It requires less power than other types of touch screens
+	C. It allows multiple touches to be detected at the same time
+	D. it allows you to point with your toes as well as your fingers
+
+29. inside the CPU, what activity does the datapath perform?   (19)
+	A. moves data to and from the central processor
+	B. Translates assembly instructions into binary code
+	C. tells the memory what to do
+	D. Arithmetic operations
+
+30. The iPad accelerometer and gyroscope   (20)
+	A. Were originally in the iPad design, but are now of little use
+	B. Provide three-axis information to the CPU
+	C. sense six degree-of-freedom motion
+	D. Significantly shorten battery life
+
+31. Which is not a characteristic of Dynamic Random Access Memory (DRAM)   (20)
+	A. It operates on a slower clock than the CPU
+	B. It is one of the fastest types of random access memory
+	C. It is the most dense in terms of bits per area on a chip
+	D. It takes very little power
+	E. It uses one or two transistors per bit
+	F. Refresh cycles are required to retain bit settings (1 or 0)
+	G. It is used for cache
+
+32. The iPad processor is the   (21)
+	A. Intel Xeon
+	B. Core i7
+	C. AMD Barcelona
+	D. ARM A5
+
+33. The abstract interface between the hardware and the lowest level of software is called the   (22)
+	A. Operating system
+	B. Instruction set architecture
+	C. Machine design specification
+	D. Application programming interface
+
+34. Instruction Set Architecture has to do with   (22)
+	A. The size and shape of the computer
+	B. The relationship between the number of cores in a CPU and its ability to exploit parallelism
+	C. The layout of circuits on the CPU chip
+	D. The interface between the lowest level of software and the hardware
+	E. Instructions, register use, memory addressing and I/O operations
+	F. The heat load on the processor when it is running
+	G. Die Yield
+
+35. Memory which retains its contents while powered off is called   (22)
+	A. Non-volatile
+	B. SRAM
+	C. DRAM
+	D. Volatile
+
+36. A problem with flash memory is that   (23)
+	A. It loses its memory when power is turned off
+	B. The number of writes are limited
+	C. The bits wear out after too many writes
+	D. The bits are easy to write but difficult to read
+	E. It is cheaper but slower than magnetic media
+	F. It cannot be made dense enough (bits/mm^2) to be efficient
+	G. It is more expensive than static RAM
+
+37. Which memory is non-volatile?   (23)
+	A. Main memory
+	B. ROM
+	C. Cache
+	D. Static Random Access Memory (SRAM)
+
+38. Which of the following types of memory is nonvolatile?   (23)
+	A. DIMM
+	B. DRAM
+	C. SRAM
+	D. Flash
+
+39. Current IEEE 802.11 wireless technology allows for data transfer rates of up to   (24)
+	A. 10 megabits per second
+	B. 1 megabit per second
+	C. 100 megabits per second
+	D. 1 gigabit per second
+	E. 100 gigabits per second
+
+40. Silicon is a   (25)
+	A. Insulator
+	B. Semiconductor
+	C. Transductor
+	D. Conductor
+
+41. The chip fabrication process begins with   (26)
+	A. An ingot
+	B. a die
+	C. a wafer
+	D. a package
+
+42. Which describe two steps in the chip fabrication process?   (26)
+	A. Slicing and dicing
+	B. Waxing and faxing
+	C. Testing and resting
+	D. Slipping and shipping
+
+43. The chip manufacturing process begins with   (26)
+	A. Slices of silicon about 0.1" thick
+	B. Doping the silicon surface
+	C. Photolithography
+	D. A silicon ingot
+	E. Checking the wafer for defects
+	F. Slicing and dicing
+	G. A large, sausage-shaped piece of silicon
+
+44. A major difficulty in determining performance is that it   (26)
+	A. Is largely independent of the processor itself
+	B. No longer relevant in today's computing market
+	C. Can be measured in different ways
+	D. Takes a long time to do accurately
+	E. Is heavily influenced by marketing
+	F. Is application dependent
+	G. Can be affected by other components in the computer
+
+45. The rectangular area on a wafer containing the circuitry for a single chip is a(n)   (27)
+	A. mask
+	B. die
+	C. imprint
+	D. module
+
+46. The percentage of good dies on a wafer is called   (27)
+	A. Profit
+	B. The beneficial margin
+	C. The success rate
+	D. The yield
+
+47. Yield is primarily affected by   (28)
+	A. Wafer defects
+	B. Etching chemistry
+	C. N and P doping
+	D. Transistor size
+
+48. A major problem in measuring performance of a computer is   (28)
+	A. Laughing at the English translation of the instruction manual
+	B. It is impossible to match conditions from run to run
+	C. Variations in the manufacturing process
+	D. It can be measured several ways
+
+49. The time it takes a computer to complete a task is an example of   (29)
+	A. Consistency
+	B. Bandwidth
+	C. Clock frequency
+	D. Response time
+
+50. In addition to cost, what is important in the selection of an off-the-shelf computer for a particular application?   (29)
+	A. Limitations in performance.
+	B. Range of power supply voltages the machine will tolerate
+	C. The size of the screen.
+	D. The speed of the network card.
+
+51. Quantification of performance can be multi-dimensional.  What difficulty does this pose?   (29)
+	A. Knowing whether or not the measurements in different dimensions are equally accurate.
+	B. Trusting the numbers because statistics can lie.
+	C. Transforming performance to a unidimensional scale so that results can be compared.
+	D. Understanding the different dimensions of performance at the same time.
+
+52. The total time required for a computer to complete a task, including I/O and operating system overhead is called   (29)
+	A. Application time
+	B. Absolute time
+	C. CPU Time
+	D. Execution time
+
+53. Performance is inversely proportional to execution time   (30)
+	A. F
+	B. T
+
+54. Performance and execution time are   (30)
+	A. proportionally related
+	B. Inversely related
+	C. exponentially related
+	D. The same thing
+
+55. Sometimes improving bandwidth as opposed to latency is a way of improving performance.  Which is an example of improving bandwidth?   (30)
+	A. Moving dorms closer to classroom buildings so students can get to class faster
+	B. More open cashier lanes in the food court
+	C. Raising the speed limit on I-25 to Denver
+	D. Faster cash registers in the cashier lanes
+	E. More streamlined procedures for cashiers in the food court
+	F. Adding more lanes on I-25 to Denver
+	G. Making exams shorter so they can be graded faster
+
+56. Which of the following indicators are inversely proportional to performance?   (31)
+	A. Memory bits transferred per second
+	B. Energy or power consumption
+	C. Clock speed
+	D. Throughput
+	E. Execution time
+	F. Instructions per second
+	G. Bandwidth
+
+57. If machine A completes a task in 10 seconds and machine B completes the task in 2 seconds, how many times faster is machine B than machine A?   (31)
+	A. Five
+	B. Four
+	C. 400%
+	D. Two and a half
+
+58. If machine A completes a task in 10 seconds and machine B completes the task in 2 seconds, how many times slower is machine A than machine B?   (31)
+	A. Four
+	B. Five
+	C. Two and a half
+	D. Three
+
+59. The CPU time spent in the operating system performing tasks on behalf of a program is called   (32)
+	A. wasted time
+	B. execution time
+	C. System CPU time
+	D. user CPU time
+
+60. Applications running on servers are particularly sensitive to   (32)
+	A. cache memory
+	B. I/O time
+	C. the amount of main memory
+	D. disk performance
+
+61. Machine A is 4 times as fast as machine B.  B runs an application in 30 seconds.  How fast will A run it?   (33)
+	A. 90 seconds
+	B. 120 seconds
+	C. 10 seconds
+	D. 7.5 seconds
+
+62. On which of the following does execution time not depend?   (34)
+	A. Clock cycle time
+	B. Number of instructions executed
+	C. Amount of system memory
+	D. Average cycles per instruction
+
+63. Which of the following is a typical challenge for computer designers   (34)
+	A. Staying awake during the boring parts of class.
+	B. Balancing the size of memory and the weight of the machine.
+	C. The tradeoff between the number of clock cycles needed for a program to execute and the length of each clock cycle.
+	D. Building machines which appeal to both men and women.
+
+64. Which results in better performance?   (34)
+	A. Increased CPI
+	B. Decreased clock rate
+	C. Decreased CPI
+	D. Increased instruction count
+
+65. You can calculate execution time by the formula   (34)
+	A. nstructions / (CPI Clock speed)
+	B. Instructions x CPI / Clock speed
+	C. nstructions x CPI * Clock speed
+	D. nstructions / CPI / Clock speed
+
+66. Instructions * CPI / GHz is   (35)
+	A. Run time in nanoseconds.
+	B. Run time in seconds.
+	C. Average CPI
+	D. The number of instructions executed.
+
+67. The execution time of a program is related to   (35)
+	A. The number of instructions times the average CPI for the program.
+	B. The number of instructions times the clock speed.
+	C. The average CPI times the clock speed.
+	D. The number of instructions divided by the clock speed
+
+68. The average number of clock cycles per instruction (CPI) in a program is an integer value   (35)
+	A. T
+	B. F
+
+69. Cycles Per Instruction (CPI) must be an integer value   (35)
+	A. F
+	B. T
+
+70. Two computers executing the same instructions complete the task in different amounts of time.  What must be the case?   (36)
+	A. One machine did more work than the other
+	B. Cycles per instruction are different
+	C. Clock speeds are different
+	D. A mistake was made
+
+71. Machine B is 50% faster than Machine A.  B runs a program in 12 seconds.  How long does it take A to run it   (37)
+	A. 12 seconds
+	B. Eighteen seconds
+	C. 18 seconds
+	D. 15 seconds
+	E. Eight seconds
+	F. Nine seconds
+	G. Ten seconds
+
+72. CPU A has an architecture with a CPI of 3 and CPU B has a CPI of 2.  What is the performance difference?   (38)
+	A. It cannot be determined.
+	B. 1.5
+	C. 0.33
+	D. 0.67
+
+73. If two machines run the same program and the machines' instruction sets have the same CPI, on what does execution time depend   (38)
+	A. Number of memory accesses
+	B. Clock cycle time
+	C. Cache size
+	D. The paging algorithm
+
+74. The compiler can affect CPI   (39)
+	A. T
+	B. F
+
+75. How can a CPI of less than 1.0 be achieved?   (39)
+	A. Executing fewer instructions
+	B. Faster clock cycle time
+	C. Issuing multiple instructions per clock cycle
+	D. Shorter instructions
+
+76. The measure of the frequency of instructions of certain types across a program or multiple programs is the    (39)
+	A. Average CPI.
+	B. Instruction mix.
+	C. Program count.
+	D. Instruction set architeture.
+
+77. If Program B on Machine B has fewer instructions than Program A on Machine A, it will run faster unless   (40)
+	A. Machine B doesn't have more cores.
+	B. Machine B's clock speed isn't too high.
+	C. Machine B's CPI isn't too large.
+	D. Machine A has more memory.
+
+78. What translates a symbolic representation of computer instructions into binary so that the processor can execute the instructions?   (40)
+	A. A converter
+	B. An assembler.
+	C. A compiler.
+	D. A translator.
+
+79. The main reason for the shift from uniprocessors to multi-core processors was   (40)
+	A. The internet
+	B. iPhones and iPads
+	C. The power wall
+	D. Personal mobile devices
+
+80. The primary technology used in fabricating computer chips is   (41)
+	A. NAND flash
+	B. Three-dimensional printing
+	C. Complementary Metal Oxide Semiconductor (CMOS)
+	D. Tunneling
+
+81. An increase in which of the following has the greatest effect on CPU power consumption   (41)
+	A. Voltage
+	B. Capacitive load
+	C. CPI
+	D. Switching frequency
+
+82. Which is not a factor in CPU power consumption?   (41)
+	A. Capacitive load
+	B. Instruction length
+	C. Switching frequency
+	D. Supply voltage
+
+83. A key to the future of computation is   (43)
+	A. Understanding parallelism
+	B. Making computer science courses harder.
+	C. Creating lower-power processors
+	D. Doubling the size of computer science programs.
+
+84. The big problem with the switch to multi-processing is that   (43)
+	A. Performance measures are very different
+	B. Programmers have to think differently
+	C. More heat-sinking is required
+	D. The chips are more difficult to manufacture
+
+85. Which of the following does not result in performance gains?   (45)
+	A. Memory Hierarchies
+	B. Prediction
+	C. Pipelining
+	D. Higher voltage requirements
+
+86. One of Hennessey and Patterson's design rules is   (46)
+	A. Get the product to market as soon as possible
+	B. Make the common case fast
+	C. Make the instruction set as compact as possible
+	D. Memory is cheap
+
+87. SPEC benchmarks are   (46)
+	A. A brand new way to measure performance
+	B. A long-standing set of standard test programs
+	C. Obsolete because of recent innovations in chip design
+	D. Unreliable because testers cheat
+
+88. To get a better picture of CPU performance   (47)
+	A. A suite of benchmark programs is used
+	B. Tests are run multiple times
+	C. Customers are allowed to assess CPU performance on their own
+	D. The industry has standards for honesty and integrity in testing
+
+89. Multiple SPEC ratios are combined using   (47)
+	A. Covariance
+	B. The arithmetic mean
+	C. The geometric mean
+	D. Logarithms
+
+90. Adding more cores to a processor will not improve performance if   (49)
+	A. Program execution speed depends on the clock frequency
+	B. The program can be broken into multiple parallel paths
+	C. Several parts of the problem can be worked on at once
+	D. No part of the program can be done in parallel with another part
+	E. The program only contains steps which must be executed in sequence
+	F. The cores are all the same size
+	G. More cores means more power consumption
+
+91. Idling computers consume a tiny fraction of the power they use at full load   (50)
+	A. F
+	B. T
+
+92. Energy efficiency can be an important performance goal   (50)
+	A. T
+	B. F
+
+93. When comparing the performance of different operating systems on different processors, instruction count can be ignored   (50)
+	A. F
+	B. T
+
+94. Execution time is the only valid measure of performance   (52)
+	A. F
+	B. T
+
+95. What is the vocabulary of commands understood by the processor?   (62)
+	A. The instruction set architecture
+	B. The intermediate code
+	C. The instructions
+	D. The assembly language
+	E. The instruction set
+	F. The binary executable
+	G. The byte code
+
+96. The vocabulary of the CPU is the   (62)
+	A. Organization
+	B. Datapath
+	C. Programs
+	D. Architecture
+	E. Description
+	F. Instruction set
+	G. Instructions
+
+97. The fastest access to data is via   (64)
+	A. Main memory
+	B. Cache
+	C. Registers
+	D. Disk
+
+98. The contents of a memory location whose address is contained in register $s1 may be expressed as:   (64)
+	A. $s1
+	B. Mem[$s1]
+	C. Regs[Mem[$s1]]
+	D. Regs[$s1]
+	E. Mem[Regs[$s1]]
+	F. 4($s1)
+
+99. The C code "d = a - e" could be represented in MIPS assembly as   (65)
+	A. SUB d, e, a
+	B. SUB a, e, d
+	C. sub $t0, $t1, $t2 where d=$t0, a=$t2 and e=$t1
+	D. d SUB a, e
+	E. SUB d, a, e
+	F. sub $t0, $t1, $t2 where d=$t0, a=$t1 and e=$t2
+	G. sub $t0, $t2, $t1 where d=$t0, a=$t1 and e=$t2
+
+100. Which language will have the most lines of code to implement a sort algorithm?   (66)
+	A. MIPS Assembly Language
+	B. C#
+	C. Assembly code
+	D. Pascal
+	E. Python
+	F. Java
+	G. C++
+
+101. For a given method, which language will have the most lines of code?   (66)
+	A. C/C++
+	B. C#
+	C. Assembly
+	D. Java
+
+102. In the instruction "add $s0, $s1, $s2", $s1 and $s2 are   (67)
+	A. Arguments
+	B. Memory locations
+	C. Immediate values
+	D. Bytes
+	E. Outputs
+	F. Operands
+	G. Registers
+
+103. In MIPS, data is moved to and from memory using   (68)
+	A. R-type add and subtract instructions
+	B. Branch instructions
+	C. Data transfer instructions
+	D. Load and Store instructions
+	E. Argument instructions
+	F. I-type add and subtract instructions
+	G. Value instructions
+
+104. What is the generic name of instructions which move data between the processor and memory?   (68)
+	A. Arithmetic instructions
+	B. Data transfer instructions
+	C. Memory Control
+	D. Register-register
+	E. Data transfer
+	F. Cache control
+	G. Branch instructions
+
+105. What is the reason that addresses of integer data stored in main memory must have the last two bits set to 0?   (69)
+	A. The cache can operate more efficiently
+	B. The data bus is only 30 bits wide
+	C. Memory is scarce and must be used efficiently
+	D. There is an alignment restriction
+	E. Word data must be four-byte aligned
+	F. Data can be located anywhere in memory.
+	G. Words must be eight-byte aligned
+
+106. Memory alignment means   (69)
+	A. The bottom two bits of a MIPS instruction address must be zero
+	B. Memory chips must be placed next to each other
+	C. Similar data items are placed next to each other in memory
+	D. More than one word can be read from memory at once
+	E. Dynamic RAM is faster than Static RAM
+	F. All eight bits of a byte must reside on the same chip
+	G. 4-byte words must begin on 4-byte boundaries
+
+107. If four-byte alignment is required, at which address could an integer not be stored?   (70)
+	A. 0x0041000E
+	B. 0x00ABFEDC
+	C. 0x0041791C
+	D. 0x00123454
+	E. 0x00410003
+	F. 0x00410AA4
+	G. 0x00418210
+
+108. The typical MIPS register-to-register arithmetic instruction (e.g., ADD, SUB) contains references to how many registers?   (72)
+	A. Four
+	B. 3
+	C. Five
+	D. One
+	E. Three
+	F. None
+	G. Two
+
+109. The typical MIPS immediate instruction (e.g., ADDI, SUBI) contains references to how many registers?   (72)
+	A. Five
+	B. One
+	C. Four
+	D. Two
+	E. Three
+	F. None
+	G. 2
+
+110. Immediate operands are   (72)
+	A. Data encoded in the instruction
+	B. Obtained by adding an offset to a register
+	C. Calculated from register values
+	D. Data located in cache
+	E. Data located in registers
+	F. Data located in the instruction itself
+	G. Data located in main memory
+
+111. Which 16-bit hex value would represent a negative number?   (74)
+	A. 0x8001
+	B. 0x100f
+	C. 0x0fff
+	D. 0x0001
+	E. 0x7777
+	F. 0X7fff
+	G. 0xffff
+
+112. In a 32-bit MIPS instruction, the location of bit 0 (the least significant bit)    (74)
+	A. The farthest right bit'
+	B. Depends on the instruction
+	C. is on the right
+	D. T=Is on the left and middle
+	E. Is on the left
+	F. Is in the middle and the right
+	G. Varies by memory manufacturer
+
+113. Negative numbers can be represented in binary   (75)
+	A. T
+	B. F
+
+114. In binary, subtracting a large positive number from a small positive number produces   (75)
+	A. a zero in the leftmost bit of the result
+	B. an underflow condition
+	C. A one in the left bit of the result
+	D. an overflow condition
+
+115. Which set of binary numbers are the two's complement of each other?   (76)
+	A. 00000001  00000000
+	B. 00000011  11111100
+	C. 00000001  11111111
+	D. 1010 0101
+	E. 1111 0000
+	F. 0101  1011
+	G. 00000000  11111111
+
+116. Which signed number is the same as 0x80?   (78)
+	A. 0xff08
+	B. 0x80FFFFFF
+	C. 0xff80
+	D. 0x7FFFFF80
+	E. 0x807FFFFF
+	F. 0xFFFFFF80
+	G. 0x7f80
+
+117. The interface between low-level hardware and software is called   (78)
+	A. The instruction set architecture
+	B. The interpreter.
+	C. Interrupt subsystem.
+	D. The operating system
+	E. Cache.
+	F. Instruction-level parallelism
+
+118. The problem with one's-complement representation of negative numbers was   (79)
+	A. It was more difficult to implement than twos-complement
+	B. There is no such thing as one's complement.
+	C. There were two zeroes
+	D. It confused the programmers
+	E. There were more positive numbers than negative
+	F. It was hard to recognize the difference between positive and negative numbers
+	G. There were more negative numbers than positive
+
+119. In twos complement notation, the most negative value is   (79)
+	A. 0x0001
+	B. 0xfffe
+	C. 0x8000
+	D. 0x80000000
+	E. 0x0000
+	F. 0x10000000
+	G. 0xFFFFFFFF
+
+120. What is the native, binary form of instructions used by the processor?   (81)
+	A. Machine instructions
+	B. Assembly language
+	C. Intermediate Language
+	D. Source code.
+	E. Assembly code.
+	F. Byte Code
+	G. Machine language
+
+121. All MIPS instructions have   (81)
+	A. Embedded memory addresses
+	B. Immediate data
+	C. Length of 32 bits
+	D. A byte which indicates how long it is
+	E. An Operations Code field
+	F. A field for the Rd register
+	G. A function code
+
+122. Which is not a MIPS type of instruction?   (82)
+	A. J
+	B. R
+	C. B
+	D. I
+
+123. Which instruction field is 6-bits long?   (82)
+	A. Rt
+	B. Imm
+	C. Op Code
+	D. Rs
+	E. Shamt
+	F. Fct Code
+	G. Rd
+
+124. The easiest conversion is from   (82)
+	A. positive to negative
+	B. Decimal to Hexadecimal.
+	C. hexadecimal to decimal
+	D. Decimal to Binary
+	E. Hexadecimal to binary.
+	F. Binary to hexadecimal
+	G. binary to decimal
+
+125. To refer to each of the 32 MIPS processor registers, an instruction needs   (83)
+	A. Six bits
+	B. 5 bits
+	C. Four bits
+	D. 32 bits
+	E. Three bits
+	F. Five bits
+	G. 16 bits
+
+126. How many bits in a MIPS instruction are allocated for immediate data   (84)
+	A. 12
+	B. 15
+	C. Eight
+	D. 16
+	E. Twenty-four
+	F. Sixteen
+	G. Ten
+
+127. Which instruction does the MIPS processor not have?   (87)
+	A. SUBI
+	B. ADD
+	C. Shift Left Logical (SLL)
+	D. Shift Right Logical (SLL)
+	E. ADDI
+	F. NOT
+	G. XOR
+
+128. The shamt field in the MIPS instruction is use for which instruction?   (88)
+	A. SLLI
+	B. SLL
+	C. XOR
+	D. NOR
+	E. Branch
+	F. SLT
+	G. SRL
+
+129. Which is not a field in the MIPS instruction format?   (88)
+	A. op
+	B. precision
+	C. funct
+	D. rt
+	E. instruction length00
+	F. shamt
+	G. rs
+
+130. What operation wound combine 0x80000000 with 0xC0000000 to produce 0x40000000?   (89)
+	A. XAND
+	B. Exclusive OR
+	C. Inclusive OR
+	D. XOR
+	E. NAND
+	F. NOR
+	G. NOT
+
+131. How many Branch instructions does the MIPS processor recognize?   (90)
+	A. 4
+	B. 3
+	C. 2
+	D. Two (BNE, BEQ)
+	E. Three (BNE, BEQ, BEZ)
+	F. Four (BNE, BEQ, BEZ, BNZ)
+	G. One (BRN)
+
+132. The BEQ and  BNE instructions are   (90)
+	A. Offsets
+	B. Not jumps
+	C. Unconditional branches
+	D. Labels
+	E. Conditional branches
+	F. Jumps
+	G. GOTOs
+
+133. MIPS conditional branch instructions require the comparison of   (90)
+	A. rs and rd
+	B. One register to zero
+	C. A register and an immediate value
+	D. rs and rt
+	E. rt and rd
+	F. A combination of three registers
+	G. Two registers
+
+134. The Program Counter contains the address of the next instruction to be executed.  Which MIPS instruction would affect the value of the PC?   (90)
+	A. LW
+	B. J
+	C. GO
+	D. ADDI
+	E. SW
+	F. IF
+	G. BEQ or BNE
+
+135. A conditional branch is appropriate for   (92)
+	A. Transferring control to a different part of the program.
+	B. Shifting a register right or left
+	C. Jumping to a new location.
+	D. Termination of a program
+	E. A subroutine call
+	F. Checking for a zero denominator.
+	G. A loop
+
+136. A sequence of instructions without branches in the middle is call a(n)   (93)
+	A. Data
+	B. Basic code block
+	C. Subroutine
+	D. Text
+	E. Code segment
+	F. Basic block
+	G. Module
+
+137. To create all conditions for branches, MIPS uses which set of instructions?   (93)
+	A. sll, srl, beq, bne, and the $zero register
+	B. blt, bgt, lgbt
+	C. j, jne, jeq, jal and the $zero register
+	D. The $0 register, slt/slti and bne/beq
+	E. slt, slti, beq, bne, and the $zero register
+	F. blt, bgt, blte, bgte
+	G. beqz, addi, add, sub
+
+138. Register $t0 contains 0xFFFFFFFF and register $t1 contains 0x00000000.  Which instruction will see $t0 as greater than $t1?   (94)
+	A. beq $t0, $t1, label
+	B. sltu $s0, $t0, $t1
+	C. slt $s0, $t1, $t0
+	D. salt
+	E. sltu
+	F. slti
+	G. slt $s0, $t0, $t1
+
+139. A good argument for MIPS not having a hardware instruction for "branch on less than" is:   (94)
+	A. It gives students something to think about.
+	B. It is a pseudo instruction.
+	C. The space on the silicon to implement the instruction would reduce the size of cache.
+	D. The complexity of the instruction would stretch the clock cycle for many more, less complicated instructions.
+	E. Because of its complexity the instruction would sink more power causing the chip to heat up too much.
+	F. It can be produced from two simple instructions
+	G. The MIPS assembler can do it.
+
+140. Which signed byte has the smallest value?   (95)
+	A. 0x00
+	B. 0x7f
+	C. 0x81
+	D. 0x01
+	E. 0x87
+	F. 0x80
+	G. 0x0f
+
+141. A jump table in combination with the ____ instruction can be used to implement a case or switch statement.   (95)
+	A. beq
+	B. jal
+	C. jr
+	D. bne
+	E. j
+	F. jump register
+	G. jeqz
+
+142. Which instruction is commonly used for a subroutine call?   (96)
+	A. jr $ra
+	B. call
+	C. bne
+	D. beq
+	E. jump and link
+	F. j
+	G. jal
+
