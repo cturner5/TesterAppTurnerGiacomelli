@@ -11,40 +11,40 @@ class Quiz:
         self.numbers_answers = [] # list of dictionaries, each element's key is a number and its value is the answer to its corresponding question
         self.quiz = {}  # dictionary made by combining questions and answers
 
-    def parseQuestionsXlsx(self, fileName):
-        location = "quizFiles\\" + fileName
-        quizFile = openpyxl.load_workbook(location)
-        sheet_names = quizFile.sheetnames
-        sheet = quizFile[sheet_names[0]]
+    def parseQuestionsXlsx(self, fileName): #gets questions from the quiz xlsx document
+        location = "quizFiles\\" + fileName #gets file out of quizFiles directory
+        quizFile = openpyxl.load_workbook(location) #opens quiz file
+        sheet_names = quizFile.sheetnames #gets sheets
+        sheet = quizFile[sheet_names[0]]    #gets first sheet
 
-        tempString = ""
-        for cellObj in sheet['B']:
-            if cellObj.value != None and sheet['C'][cellObj.row - 1].value == None:
+        tempString = ""        #initialized temporary string for storing each question
+        for cellObj in sheet['B']: #iterates through the quiz file
+            if cellObj.value != None and sheet['C'][cellObj.row - 1].value == None: #gets the question
                 tempString = tempString + str(cellObj.value) + "\n"
-            elif cellObj.value != None and sheet['C'][cellObj.row - 1].value != None:
+            elif cellObj.value != None and sheet['C'][cellObj.row - 1].value != None: #gets the answers
                 tempString = tempString + str(cellObj.value) + " " + str(sheet['C'][cellObj.row - 1].value) + "\n"
-            if cellObj.value == None:
-                self.questions.append(tempString)
-                tempString = ""
+            if cellObj.value == None:   #end of question and answers
+                self.questions.append(tempString) #appends string to list of questions
+                tempString = "" #resets temp string
 
-        self.questions.append(tempString)
+        self.questions.append(tempString) #append last question to question list
 
-        return self.questions
+        return self.questions   #return question list
 
-    def parseAnswersXlsx(self, fileName):
+    def parseAnswersXlsx(self, fileName): #gets answers that correspond to selected questions
 
-        for i in range(5):
+        for i in range(5):  #removes .xlsx from filename
             fileName = fileName[:-1]
 
-        location = "quizFiles\\quizAnswers\\" + fileName + "Answers.xlsx"
+        location = "quizFiles\\quizAnswers\\" + fileName + "Answers.xlsx"   #gets answers file based on filename
 
-        answerFile = openpyxl.load_workbook(location)
-        sheet_names = answerFile.sheetnames
-        sheet = answerFile[sheet_names[0]]
+        answerFile = openpyxl.load_workbook(location)   #open answers file
+        sheet_names = answerFile.sheetnames #get sheets
+        sheet = answerFile[sheet_names[0]]  #get first sheet
 
-        for cellObj in sheet['A']:
-            self.answers.append(str(cellObj.value))
-        print(len(self.answers))
+        for cellObj in sheet['A']:      #iterates through the file
+            self.answers.append(str(cellObj.value)) #appends answers to the answers list
+        #print(len(self.answers)) for testing
 
         samp = ""
         for i in self.answers:
